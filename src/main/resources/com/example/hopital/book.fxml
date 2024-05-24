@@ -10,32 +10,32 @@
 <?import javafx.scene.text.Font?>
 
 <HBox fx:id="box" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="71.0" prefWidth="372.0" style="-fx-background-radius: 15;" stylesheets="@../../../../../css/styleDash.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.BookController">
-    <children>
-        <ImageView fx:id="bookImage" fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../../../images/calendar/icons8-calendrier-bébé-100.png" />
-            </image>
-            <HBox.margin>
-                <Insets left="10.0" right="10.0" />
-            </HBox.margin>
-        </ImageView>
-        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
-            <children>
-                <Label fx:id="bookName" prefHeight="15.0" prefWidth="86.0" text="10:30">
-                    <font>
-                        <Font name="System Bold" size="21.0" />
-                    </font>
-                </Label>
-                <Label fx:id="authorName" alignment="TOP_LEFT" prefHeight="41.0" prefWidth="329.0" text="Examen de Génocogrophie">
-                    <font>
-                        <Font size="19.0" />
-                    </font>
-                </Label>
-            </children>
-        </VBox>
-    </children>
-    <styleClass>
-        <String fx:value="shadow" />
-        <String fx:value="white-background" />
-    </styleClass>
+   <children>
+      <ImageView fx:id="bookImage" fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/calendar/icons8-calendrier-bébé-100.png" />
+         </image>
+         <HBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </HBox.margin>
+      </ImageView>
+      <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+         <children>
+            <Label fx:id="bookName" prefHeight="15.0" prefWidth="86.0" text="10:30">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="authorName" alignment="TOP_LEFT" prefHeight="41.0" prefWidth="329.0" text="Examen de Génocogrophie">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+   <styleClass>
+      <String fx:value="shadow" />
+      <String fx:value="white-background" />
+   </styleClass>
 </HBox>

@@ -1,0 +1,69 @@
+.white-background {
+    -fx-background-color: #fff;
+
+}
+
+.transparent {
+    -fx-background-color: rgba(0, 0, 0, 0);
+
+}
+
+.round-layout {
+    -fx-border-radius: 50;
+    -fx-border-color: #D7D7D7;
+
+}
+
+.selected {
+    -fx-background-color: #F3F3F3;
+
+}
+
+.mouse-moved:hover {
+    -fx-background-color: #E4E4E4;
+}
+
+/* Style lorsqu on survole un text */
+.survole-color-text {
+    -fx-text-fill: #a3a3a3;
+}
+
+.survole-color-text :hover {
+    -fx-text-fill: #2F3192;
+}
+
+/* Style Bouton Vert (connexion)*/
+.boutonConnexion {
+    -fx-background-color: #71cebf;
+    -fx-text-fill: #fff;
+
+}
+
+.boutonConnexion:hover {
+    -fx-text-fill: #71cebf;
+    -fx-background-color: transparent;
+    -fx-border-color:  #71cebf;
+    -fx-border-vidth: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 20;
+}
+/* Style Bouton */
+.boutonStyle {
+    -fx-background-color: #2F3192;
+    -fx-text-fill: #fff;
+
+}
+
+.boutonStyle:hover {
+    -fx-text-fill: #2F3192;
+    -fx-background-color: transparent;
+    -fx-border-color: #2F3192;
+    -fx-border-vidth: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 50;
+}
+/* Style Ombre */
+.shadow {
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 10);
+
+}

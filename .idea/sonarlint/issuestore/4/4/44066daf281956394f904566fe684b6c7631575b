@@ -1,8 +1,8 @@
 
 »
-java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.( ùÓ‹ÿÿÿÿÿ8Ò¿¼†ó1
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.( ùÓ‹ÿÿÿÿÿ8êõèÙú1
 E
-java:S2115")Add password protection to this database.(†©ÖW8Æ³ˆØó1
-L	java:S106"+Replace this use of System.out by a logger.(ıµıûÿÿÿÿ8Æ³ˆØó1
-F	java:S106"+Replace this use of System.out by a logger.(›¢š8Æ³ˆØó1
-L	java:S106 "+Replace this use of System.out by a logger.(œ ßùÿÿÿÿ8Ç³ˆØó1
+java:S2115")Add password protection to this database.(†©ÖW8òõèÙú1
+L	java:S106"+Replace this use of System.out by a logger.(ıµıûÿÿÿÿ8ôõèÙú1
+F	java:S106"+Replace this use of System.out by a logger.(›¢š8ôõèÙú1
+L	java:S106 "+Replace this use of System.out by a logger.(œ ßùÿÿÿÿ8õõèÙú1

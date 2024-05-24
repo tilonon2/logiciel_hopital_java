@@ -1,33 +1,39 @@
 package com.example.hopital;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.HBox;
-import model.Book;
 import javafx.geometry.Insets;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import model.Book;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-
 public class dashController implements Initializable {
     @FXML
     private HBox cardLayoout;
     @FXML
     private VBox bookContainer;
+    private List<Book> recentlyAdded;
     private List<Book> recommended;
     private List<Book> booksVertical;
-    private List<Book> recentlyAdded;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         recentlyAdded = new ArrayList<>(recentlyAdded());
+        //verticalement
         booksVertical = new ArrayList<>(booksVertical());
+        //Pour une Grid
+        // recommended = new ArrayList<>(books());
+        // int column = 0;
+        // int row = 1;
         try{
+            //HBox
             for (Book value : recentlyAdded) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("card.fxml"));
@@ -36,6 +42,7 @@ public class dashController implements Initializable {
                 cardController.setData(value);
                 cardLayoout.getChildren().add(cardBox);
             }
+            //VBox
             for (Book book : booksVertical) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("book.fxml"));
@@ -44,11 +51,29 @@ public class dashController implements Initializable {
                 bookController.setData(book);
                 bookContainer.getChildren().add(bookBox);
             }
+            //Grid
+            // for (Book book : recommended) {
+            //     FXMLLoader fxmlLoader = new FXMLLoader();
+            //     fxmlLoader.setLocation(getClass().getResource("book.fxml"));
+            //     VBox bookBox = fxmlLoader.load();
+            //     BookController bookController = fxmlLoader.getController();
+            //     bookController.setData(book);
+
+            //     if (column == 1){
+            //         column = 0;
+            //         ++row;
+
+            //     }
+
+            //     bookContainer.add(bookBox,column++, row);
+            //     GridPane.setMargin(bookBox, new Insets(10));
+
+            // }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
+    //HBOX
     private List<Book> recentlyAdded() {
         List<Book> ls = new ArrayList<>();
 
@@ -60,21 +85,17 @@ public class dashController implements Initializable {
 
         //Ajout
         book = new Book();
-
         book.setImageSrc("/images/rdvprevuscejour.png");
         book.setAuthor("RDV prévus ce jour");
         book.setName("0");
-
         ls.add(book);
         //Fin ajout
 
         //Ajout
         book = new Book();
-
         book.setImageSrc("/images/totaldespraticiens.png");
         book.setAuthor("Total des praticiens");
         book.setName("10");
-
         ls.add(book);
         //Fin ajout
 
@@ -190,17 +211,14 @@ public class dashController implements Initializable {
 
         //Ajout
         book = new Book();
-
         book.setImageSrc("/images/litoccupes.png");
         book.setAuthor("Lits occupés");
         book.setName("1");
-
         ls.add(book);
         //Fin ajout
 
         //Ajout
         book = new Book();
-
         book.setImageSrc("/images/litlibre.png");
         book.setAuthor("Lits libre");
         book.setName("10");
@@ -211,6 +229,30 @@ public class dashController implements Initializable {
         return ls;
 
     }
+    //GRIDPANE
+    // private List<Book> books(){
+    //     List<Book> ls = new ArrayList<>();
+    //     Book book = new Book();
+    //     book.setImageSrc("/images/newpatients.png");
+    //     book.setAuthor("Nouveaux patients");
+    //     book.setName("3");
+    //     ls.add(book);
+
+    //     //Ajout
+    //     book = new Book();
+    //     book.setImageSrc("/images/rdvprevuscejour.png");
+    //     book.setAuthor("RDV prévus ce jour");
+    //     book.setName("0");
+    //     ls.add(book);
+    //     //Fin ajout
+
+
+    //     //return
+    //     return ls;
+
+    // }
+
+    //VBOX
     private List<Book> booksVertical(){
         List<Book> ls = new ArrayList<>();
 
@@ -231,7 +273,26 @@ public class dashController implements Initializable {
         //Fin ajout
 
 
+        //return
         return ls;
 
     }
+    //pour switch 2 bouton en fonction de 2 pane sur la meme page
+    // private void handleButtonAction(ActionEvent event) {
+    //     if (event.getSource() == button1) {
+    //         paneSignin.toFront();
+    //         //Autre
+    //         button1.setStyle("-fx-background-color: #000000");
+    //         button2.setStyle("-fx-background-color: #ffffff");
+    //         cardLayoout.setVisible(true);
+    //         bookContainer.setVisible(false);
+    //     } else if (event.getSource() == button2) {
+    //         paneLogin.toFront();
+    //         //Autre
+    //         button2.setStyle("-fx-background-color: #000000");
+    //         button1.setStyle("-fx-background-color: #ffffff");
+    //         cardLayoout.setVisible(false);
+    //         bookContainer.setVisible(true);
+    //     }
+    // }
 }

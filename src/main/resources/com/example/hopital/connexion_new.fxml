@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="1381.0" style="-fx-background-radius: 50; -fx-background-color: #71CEBF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="1381.0" style="-fx-background-radius: 40; -fx-background-color: #71CEBF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="980.0" prefWidth="642.0" HBox.hgrow="ALWAYS">
          <children>
@@ -64,7 +64,7 @@
             <Circle fill="#71cebf" layoutX="46.0" layoutY="943.0" radius="23.0" stroke="#71cebf" strokeType="INSIDE" />
          </children>
       </AnchorPane>
-      <VBox alignment="TOP_CENTER" prefHeight="980.0" prefWidth="687.0" style="-fx-background-radius: 50; -fx-background-color: #fff;">
+      <VBox alignment="TOP_CENTER" prefHeight="980.0" prefWidth="687.0" style="-fx-background-radius: 40; -fx-background-color: #fff;">
          <children>
             <AnchorPane prefHeight="980.0" prefWidth="580.0" VBox.vgrow="ALWAYS">
                <children>
@@ -97,7 +97,7 @@
                   </VBox>
                   <ImageView fitHeight="404.0" fitWidth="238.0" layoutX="434.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/other/new/new/3D%20female%20doctor%20and%20male%20doctor%20standing%20together%20Illustration.jpg" />
+                        <Image url="@../../../images/other/new/new/image_doctor.jpg" />
                      </image>
                   </ImageView>
                   <Label layoutX="194.0" layoutY="199.0" prefHeight="81.0" prefWidth="302.0" text="Welcome Back">
@@ -110,7 +110,7 @@
                         <Font name="Cooper Black" size="20.0" />
                      </font>
                   </Label>
-                  <Button layoutX="84.0" layoutY="585.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="346.0" style="-fx-background-color: #71cebf; -fx-background-radius: 20;" text="Connexion" textFill="WHITE">
+                  <Button layoutX="84.0" layoutY="585.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="346.0" style="-fx-background-radius: 20;" styleClass="boutonConnexion" stylesheets="@../../../../../css/styleDash.css" text="Connexion" textFill="WHITE">
                      <font>
                         <Font name="Cooper Black" size="32.0" />
                      </font>

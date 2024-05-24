@@ -1,0 +1,12 @@
+
+v	java:S125"<This block of commented-out lines of code should be removed.(Äèî{J$619d2342-0742-4214-a6b8-19f8ad555415
+w	java:S125""<This block of commented-out lines of code should be removed.(“á¢ôJ$0edca05f-80ff-4f52-860d-b028e074ad2d
+v	java:S125("<This block of commented-out lines of code should be removed.(°›½jJ$6639f58e-1f8b-425d-905b-dfc657621c4a
+r
+java:S1128"6Remove this unused import 'javafx.event.EventHandler'.(º»û˜J$87b30341-8cac-460c-8c48-65d2ef3922e3
+{
+java:S1128	":Remove this unused import 'javafx.scene.input.MouseEvent'.(˜¬‹æÿÿÿÿÿJ$8f4cfdd2-a43d-458b-b7e6-37b6c78cbd5e
+g
+java:S1068"+Remove this unused "xOffset" private field.(ß”Ö¼J$fa621c33-c042-486f-b182-7dc6f51231ab
+l
+java:S1068"+Remove this unused "yOffset" private field.(îãìãûÿÿÿÿJ$66f3d56f-699b-4b24-a8a1-9e8f9099f853
