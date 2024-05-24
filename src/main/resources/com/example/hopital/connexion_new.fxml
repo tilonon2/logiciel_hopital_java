@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="1381.0" style="-fx-background-radius: 50; -fx-background-color: #71CEBF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="980.0" prefWidth="642.0" HBox.hgrow="ALWAYS">
+         <children>
+            <Circle fill="WHITE" layoutX="325.0" layoutY="484.0" radius="297.0" stroke="WHITE" strokeType="INSIDE" />
+            <ImageView fitHeight="262.0" fitWidth="301.0" layoutX="112.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/other/new/9bf7949ef42592b87af958273dd2733c.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="248.0" fitWidth="268.0" layoutX="329.0" layoutY="358.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/other/new/99a181a4037a046dc8c68face5c3f93a.jpg" />
+               </image>
+            </ImageView>
+            <Circle fill="WHITE" layoutX="522.0" layoutY="169.0" radius="125.0" stroke="WHITE" strokeType="INSIDE" />
+            <ImageView fitHeight="163.0" fitWidth="186.0" layoutX="428.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/other/new/463528b0579d6efdd15da61330cdc541.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="130.0" fitWidth="130.0" layoutX="351.0" layoutY="601.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/other/new/f395ac3623bf16427e4a4651559672e3.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="213.0" fitWidth="386.0" layoutX="132.0" layoutY="493.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/other/new/c7fbf15813f69cbe18317d9a13e59b4d.jpg" />
+               </image>
+            </ImageView>
+            <Circle fill="#71cebf" layoutX="231.0" layoutY="848.0" radius="126.0" stroke="#71cebf" strokeType="INSIDE" />
+            <Circle fill="WHITE" layoutX="670.0" layoutY="390.0" radius="32.0" stroke="WHITE" strokeType="INSIDE" />
+            <Circle fill="#71cebf" layoutX="109.0" layoutY="231.0" radius="59.0" stroke="#71cebf" strokeType="INSIDE" />
+            <Circle fill="#71cebf" layoutX="550.0" layoutY="293.0" radius="59.0" stroke="#71cebf" strokeType="INSIDE" />
+            <Circle fill="#71cebf" layoutX="389.0" layoutY="89.0" radius="59.0" stroke="#71cebf" strokeType="INSIDE" />
+            <ImageView fitHeight="209.0" fitWidth="311.0" layoutX="39.0" layoutY="761.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/other/e3337077b06b079eabdcffe7e360c6ee.jpg" />
+               </image>
+            </ImageView>
+            <Circle fill="#71cebf" layoutX="189.0" layoutY="762.0" radius="33.0" stroke="#71cebf" strokeType="INSIDE" />
+            <Circle fill="#71cebf" layoutX="232.0" layoutY="804.0" radius="33.0" stroke="#71cebf" strokeType="INSIDE" />
+            <Circle fill="#71cebf" layoutX="226.0" layoutY="904.0" radius="33.0" stroke="#71cebf" strokeType="INSIDE" />
+            <Circle fill="#71cebf" layoutX="32.0" layoutY="763.0" radius="23.0" stroke="#71cebf" strokeType="INSIDE" />
+            <Circle fill="#71cebf" layoutX="203.0" layoutY="795.0" radius="23.0" stroke="#71cebf" strokeType="INSIDE" />
+            <Pane layoutX="28.0" layoutY="956.0" prefHeight="15.0" prefWidth="210.0" style="-fx-background-color: #71cebf;" />
+            <Circle fill="#71cebf" layoutX="46.0" layoutY="943.0" radius="23.0" stroke="#71cebf" strokeType="INSIDE" />
+         </children>
+      </AnchorPane>
+      <VBox alignment="TOP_CENTER" prefHeight="980.0" prefWidth="687.0" style="-fx-background-radius: 50; -fx-background-color: #fff;">
+         <children>
+            <AnchorPane prefHeight="980.0" prefWidth="580.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="297.0" fitWidth="306.0" layoutX="169.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="65.0" layoutY="308.0" prefHeight="69.0" prefWidth="261.0" text="Se connecter">
+                     <font>
+                        <Font name="Cooper Black" size="39.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="80.0" layoutY="427.0" prefHeight="140.0" prefWidth="344.0">
+                     <children>
+                        <TextField prefHeight="57.0" prefWidth="344.0" promptText="Nom Utilisateur" style="-fx-background-radius: 15;">
+                           <font>
+                              <Font name="Bell MT Bold" size="24.0" />
+                           </font>
+                        </TextField>
+                        <TextField prefHeight="58.0" prefWidth="344.0" promptText="Votre mots de passe" style="-fx-background-radius: 15;">
+                           <font>
+                              <Font name="Bell MT Bold" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="404.0" fitWidth="238.0" layoutX="434.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/other/new/new/3D%20female%20doctor%20and%20male%20doctor%20standing%20together%20Illustration.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="194.0" layoutY="199.0" prefHeight="81.0" prefWidth="302.0" text="Welcome Back">
+                     <font>
+                        <Font name="Cooper Black" size="37.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="378.0" prefHeight="32.0" prefWidth="379.0" text="Entrez les détails de votre compte">
+                     <font>
+                        <Font name="Cooper Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="84.0" layoutY="585.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="346.0" style="-fx-background-color: #71cebf; -fx-background-radius: 20;" text="Connexion" textFill="WHITE">
+                     <font>
+                        <Font name="Cooper Black" size="32.0" />
+                     </font>
+                  </Button>
+                  <HBox alignment="CENTER" layoutX="74.0" layoutY="672.0" prefHeight="55.0" prefWidth="360.0">
+                     <children>
+                        <Separator prefWidth="200.0" style="-fx-background-color: #A6A6A6;" />
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="320.0" text="Se Connecter Avec" textFill="#a6a6a6">
+                           <font>
+                              <Font name="Cooper Black" size="20.0" />
+                           </font>
+                        </Label>
+                        <Separator prefWidth="200.0" style="-fx-background-color: #A6A6A6;" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="72.0" layoutY="729.0" prefHeight="45.0" prefWidth="369.0" spacing="30.0">
+                     <children>
+                        <ImageView fitHeight="53.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/other/logo/icons8-facebook-nouveau-48.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="47.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/other/logo/icons8-logo-google-48.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/other/logo/sociale.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="46.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/other/logo/twitter.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</HBox>

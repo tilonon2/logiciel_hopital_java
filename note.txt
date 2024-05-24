@@ -1,0 +1,37 @@
+Note de la réunion d'aujourd'hui :
+
+-Liste des types d'utilisateur ;
+
+Super utilisateur
+ex soignant
+infirmier -> Auxiliaire
+Medecin 
+Sage femme 
+
+
+-Patient :
+
+Liste de tous les patients 
+
+Voir son carnet 
+
+Barre de recherche pour filtrer
+
+
+- Salle d'attente :
+
+Liste déroulante 
+
+Prise de constante -> formulaire
+
+
+Consultation:
+
+Prescription -> 
+
+examen sup
+
+
+Tilo : utilisateur, rdv, traitement 
+Radji : Dash, salle d'attente, Medecin
+Sékou : Patients, consultation

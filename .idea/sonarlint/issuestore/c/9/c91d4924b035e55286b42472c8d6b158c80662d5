@@ -1,0 +1,21 @@
+
+n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²‚å»8·™»ú1
+o
+java:S37763"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(Ê¿éª8µ·™»ú1
+]	java:S125c"<This block of commented-out lines of code should be removed.(¡†Ãıÿÿÿÿ8Ç·™»ú1
+]	java:S125t"<This block of commented-out lines of code should be removed.(¡¨Åúıÿÿÿÿ8Í·™»ú1
+I
+java:S1602u",Remove useless curly braces around statement(ĞÕÇÉ8Î·™»ú1
+L	java:S106w"+Replace this use of System.out by a logger.(ò€‰Šùÿÿÿÿ8Ş·™»ú1
+]	java:S125|"<This block of commented-out lines of code should be removed.(—°µŒûÿÿÿÿ8à·™»ú1
+I
+java:S1602}",Remove useless curly braces around statement(Ò´î¢8á·™»ú1
+G	java:S106"+Replace this use of System.out by a logger.(™´î™8á·™»ú1
+[
+java:S1117œ"8Rename "year" which hides the field declared at line 21.(õ”éšıÿÿÿÿ8î·™»ú1
+\
+java:S1117"9Rename "month" which hides the field declared at line 24.(Û¼ßòúÿÿÿÿ8î·™»ú1
+;
+java:S2119Ÿ"Save and re-use this "Random".(¼İÅf8ó·™»ú1
+X
+java:S1144o";Remove this unused private "createCalendarActivity" method.(¡Ù‘³8õ·™»ú1

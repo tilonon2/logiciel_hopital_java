@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="603.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.MainCarnetController">
+   <children>
+      <Label layoutX="368.0" layoutY="57.0" text="Tableau des différentes consultations">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="57.0" fitWidth="56.0" layoutX="773.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/logo_2.png" />
+         </image>
+      </ImageView>
+      <TableView layoutX="242.0" layoutY="110.0" prefHeight="375.0" prefWidth="506.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Numéro" />
+          <TableColumn prefWidth="280.800048828125" text="Date" />
+            <TableColumn prefWidth="149.59991455078125" text="Voir la consulation" />
+        </columns>
+      </TableView>
+      <Label layoutX="66.0" layoutY="165.0" text="Nom" />
+      <Label layoutX="56.0" layoutY="202.0" text="¨Prénom" />
+      <Label layoutX="54.0" layoutY="235.0" text="Date de naissance" />
+      <Label layoutX="55.0" layoutY="271.0" text="Sexe" />
+      <Label layoutX="55.0" layoutY="307.0" text="Numéro de téléphone" />
+   </children>
+</AnchorPane>

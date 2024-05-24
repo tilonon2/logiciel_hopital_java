@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="991.0" prefWidth="1082.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.SpecialisteController">
+   <children>
+      <Text layoutX="468.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRAITEMENTS" wrappingWidth="165.833984375">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="477.0" fitWidth="435.0" layoutX="363.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/traitement_2.png" />
+         </image>
+      </ImageView>
+      <TableView layoutX="154.0" layoutY="495.0" prefHeight="464.0" prefWidth="902.0">
+         <columns>
+            <TableColumn prefWidth="217.0" text="NOM" />
+            <TableColumn minWidth="0.0" prefWidth="194.0" text="PRENOM" />
+            <TableColumn prefWidth="187.0" text="DATE DE CONSULTATION" />
+            <TableColumn prefWidth="303.0" text="STATUS DU TRAITEMENT" />
+         </columns>
+      </TableView>
+      <Button layoutX="17.0" layoutY="576.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="124.0" text="PRESCRIPTION">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="17.0" layoutY="670.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="124.0" text="CLASSER">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="17.0" layoutY="760.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="124.0" text="IMPRIMER">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

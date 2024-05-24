@@ -1,0 +1,26 @@
+
+L
+java:S3740"/Provide the parametrized type for this generic.(»éÜà8¬†çÒô1
+s	java:S116"WRename this field "tableau_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»éÜà8Ë†çÒô1
+	java:S116"^Rename this field "date_naissance_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤½§œøÿÿÿÿ8Ë†çÒô1
+s	java:S116!"WRename this field "col_fonction" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(  ¥¸8Ë†çÒô1
+t	java:S116$"XRename this field "col_naissance" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ†ûæ8Ë†çÒô1
+s	java:S116'"RRename this field "col_nom" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õöØùúÿÿÿÿ8Ë†çÒô1
+v	java:S116*"URename this field "col_prenom" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·÷Ç§üÿÿÿÿ8Ì†çÒô1
+o	java:S116-"SRename this field "col_sexe" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÓó8Ì†çÒô1
+t	java:S1160"XRename this field "fonction_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍçÒó8Ì†çÒô1
+t	java:S1163"SRename this field "nom_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃéÕšùÿÿÿÿ8Ì†çÒô1
+t	java:S1166"SRename this field "mdp_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×å¹—ûÿÿÿÿ8Ì†çÒô1
+w	java:S1169"VRename this field "prenom_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•½¹Àúÿÿÿÿ8Ì†çÒô1
+r	java:S116<"VRename this field "sexe_f_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ø×Æ8Ì†çÒô1
+w	java:S116?"VRename this field "sexe_m_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(å¯ÌÍşÿÿÿÿ8Ì†çÒô1
+X	java:S125¥"<This block of commented-out lines of code should be removed.(±¡°m8Ø†çÒô1
+`
+java:S1128">Remove this unused import 'javafx.collections.ObservableList'.(ÄÜ€éüÿÿÿÿ8Á»ôûô1
+N
+java:S1128
+"1Remove this unused import 'org.w3c.dom.Document'.(Á§²“8Á»ôûô1
+Q
+java:S1128"5Remove this unused import 'java.io.FileOutputStream'.(˜«ªg8Á»ôûô1
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8Á»ôûô1

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="633.0" prefWidth="751.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.EnregistrerPatientController">
+   <children>
+      <Label layoutX="84.0" layoutY="85.0" text="Nom" />
+      <Label layoutX="264.0" layoutY="85.0" text="Prenoms" />
+      <Label layoutX="396.0" layoutY="85.0" text="Date de naissance" />
+      <Label layoutX="595.0" layoutY="85.0" text="Adresse" />
+      <Label layoutX="79.0" layoutY="179.0" text="Nationalite" />
+      <Label layoutX="290.0" layoutY="188.0" text="Numéro de Téléphone" />
+      <Label layoutX="528.0" layoutY="188.0" text="Email" />
+      <Label layoutX="141.0" layoutY="273.0" text="Genre" />
+      <DatePicker layoutX="385.0" layoutY="107.0" prefHeight="26.0" prefWidth="143.0" />
+      <TextField layoutX="39.0" layoutY="107.0" />
+      <TextField layoutX="219.0" layoutY="108.0" />
+      <TextField layoutX="563.0" layoutY="108.0" />
+      <TextField layoutX="39.0" layoutY="206.0" />
+      <RadioButton layoutX="65.0" layoutY="308.0" mnemonicParsing="false" text="Homme" />
+      <RadioButton layoutX="137.0" layoutY="308.0" mnemonicParsing="false" text="Femme" />
+      <RadioButton layoutX="204.0" layoutY="308.0" mnemonicParsing="false" text="Autre" />
+      <TextField layoutX="275.0" layoutY="206.0" />
+      <TextField layoutX="492.0" layoutY="206.0" />
+      <ImageView fitHeight="96.0" fitWidth="58.0" layoutX="673.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/logo_2.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,12 @@
+
+n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÚÕíßÿÿÿÿÿ8‹Õ³»ú1
+~
+java:S1450"\Remove the "booksVertical" field and declare it as a local variable in the relevant methods.(‡€ßúÿÿÿÿ8—Õ³»ú1
+y
+java:S1450"\Remove the "recentlyAdded" field and declare it as a local variable in the relevant methods.(§ü«8˜Õ³»ú1
+U
+java:S1128"3Remove this unused import 'javafx.geometry.Insets'.(›¨µğûÿÿÿÿ8·Á—×ú1
+[
+java:S1128	"9Remove this unused import 'javafx.scene.layout.GridPane'.(ÖÀ¹¯ûÿÿÿÿ8·Á—×ú1
+K
+java:S1068"/Remove this unused "recommended" private field.(¸ƒªV8¥Õ³»ú1

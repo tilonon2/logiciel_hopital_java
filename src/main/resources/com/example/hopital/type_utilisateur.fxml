@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="991.0" prefWidth="1082.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.TypeUtilisateurController">
+   <children>
+      <RadioButton fx:id="utilisateurvue" layoutX="642.0" layoutY="202.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="160.0" text="Utilisateur">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="typeutilisateurvue" layoutX="641.0" layoutY="255.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" text="Type Utilisateur">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="dashboardvue" layoutX="883.0" layoutY="202.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" text="Dashboard">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="salleattentevue" layoutX="884.0" layoutY="255.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" text="Salle d'attente">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="consultationvue" layoutX="641.0" layoutY="312.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" text="Consultation">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="traitementvue" layoutX="886.0" layoutY="312.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" text="Traitement">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="medicamentvue" layoutX="641.0" layoutY="368.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" text="Medicament">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="rdvvue" layoutX="641.0" layoutY="426.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" text="Rendez-vous">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </RadioButton>
+      <Text layoutX="467.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TYPE UTILISATEURS" wrappingWidth="223.0">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
+      <TextField fx:id="libelle_typeuser" layoutX="641.0" layoutY="136.0" prefHeight="48.0" prefWidth="328.0" />
+      <Text layoutX="558.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Libellé :" wrappingWidth="82.833984375">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Text layoutX="565.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accès :" wrappingWidth="75.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Button fx:id="valider_type_user" layoutX="509.0" layoutY="498.0" mnemonicParsing="false" onAction="#ajouter_type_utilisateur" prefHeight="64.0" prefWidth="124.0" text="VALIDER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="494.0" fitWidth="376.0" layoutX="97.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/groupe.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="table_type_user" layoutX="157.0" layoutY="591.0" prefHeight="376.0" prefWidth="902.0">
+         <columns>
+            <TableColumn fx:id="collibelle" prefWidth="187.0" text="Libellé" />
+            <TableColumn fx:id="coluser" minWidth="0.0" prefWidth="71.0" text="Utilisateur" />
+            <TableColumn fx:id="coltypeuser" prefWidth="101.0" text="Type Utilisateur" />
+            <TableColumn fx:id="colconsult" text="Consulation" />
+            <TableColumn fx:id="colmedic" prefWidth="82.0" text="Medicament" />
+            <TableColumn fx:id="colrdv" prefWidth="32.0" text="Rdv" />
+            <TableColumn fx:id="coldash" prefWidth="72.0" text="Dashboard" />
+            <TableColumn fx:id="colsalle" prefWidth="87.0" text="Salle d'attente" />
+            <TableColumn fx:id="coltrait" prefWidth="69.0" text="Traitement" />
+            <TableColumn fx:id="colpatient" prefWidth="47.0" text="Patient" />
+            <TableColumn fx:id="colspe" prefWidth="73.0" text="Specialistes" />
+         </columns>
+      </TableView>
+      <Button fx:id="modifier_type_user" layoutX="24.0" layoutY="653.0" mnemonicParsing="false" onAction="#updatefonction" prefHeight="64.0" prefWidth="124.0" text="MODIFIER">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="24.0" layoutY="747.0" mnemonicParsing="false" onAction="#deletefonction" prefHeight="64.0" prefWidth="124.0" text="SUPPRIMER">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <RadioButton fx:id="patientvue" layoutX="886.0" layoutY="368.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" text="Patient">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="specialistevue" layoutX="887.0" layoutY="426.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" text="Specialistes">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </RadioButton>
+   </children>
+</AnchorPane>

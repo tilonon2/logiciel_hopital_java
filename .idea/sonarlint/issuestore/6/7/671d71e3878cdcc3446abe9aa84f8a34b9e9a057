@@ -1,0 +1,45 @@
+
+L
+java:S3740 "/Provide the parametrized type for this generic.(ÇÔ†Ø8ËÉ‚³ó1
+s
+java:S1192l"QDefine a constant instead of duplicating this literal "Type Utilisateur" 3 times.(Ô”Âÿşÿÿÿÿ8ùÑ½³ó1
+m	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ĞéÇ 8ÌÉ‚³ó1
+n	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦¤šâ8ÌÉ‚³ó1
+s	java:S117±"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ºá¬üÿÿÿÿ8ÌÉ‚³ó1
+n	java:S117½"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ĞéÇ 8ÌÉ‚³ó1
+s	java:S117‹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ºá¬üÿÿÿÿ8¼¶³³ó1
+n	java:S117É"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•É‚8ÕŠ³ó1
+|	java:S116"[Rename this field "libelle_typeuser" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Æ¦Ğûÿÿÿÿ8âÉ‚³ó1
+x	java:S116"\Rename this field "valider_type_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼àˆ¼8âÉ‚³ó1
+v	java:S116 "ZRename this field "table_type_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇÔ†Ø8âÉ‚³ó1
+q
+java:S1659"ODeclare "typeutilisateurvue" and all following declarations on a separate line.(±Àİıÿÿÿÿ8ãÉ‚³ó1
+j	java:S100B"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬—™Æ8åÉ‚³ó1
+p
+java:S3776Ç"RRefactor this method to reduce its Cognitive Complexity from 42 to the 15 allowed.(ĞÍ–8ëÉ‚³ó1
+e
+java:S1126Ï"BReplace this if-then-else statement by a single method invocation.(ë³áÌøÿÿÿÿ8ìÉ‚³ó1
+e
+java:S1126Ô"BReplace this if-then-else statement by a single method invocation.(éîâëøÿÿÿÿ8ìÉ‚³ó1
+e
+java:S1126Ù"BReplace this if-then-else statement by a single method invocation.(©ÌšÒşÿÿÿÿ8ìÉ‚³ó1
+e
+java:S1126Ş"BReplace this if-then-else statement by a single method invocation.(Òµ–ğøÿÿÿÿ8ìÉ‚³ó1
+`
+java:S1126ã"BReplace this if-then-else statement by a single method invocation.(Üº¡¬8ìÉ‚³ó1
+e
+java:S1126è"BReplace this if-then-else statement by a single method invocation.(¼½Ü÷ûÿÿÿÿ8ìÉ‚³ó1
+e
+java:S1126í"BReplace this if-then-else statement by a single method invocation.(¼£Ê’ûÿÿÿÿ8ìÉ‚³ó1
+`
+java:S1126ò"BReplace this if-then-else statement by a single method invocation.(Ö»Ø8íÉ‚³ó1
+`
+java:S1126÷"BReplace this if-then-else statement by a single method invocation.(ãÉ™ı8íÉ‚³ó1
+e
+java:S1126ü"BReplace this if-then-else statement by a single method invocation.(êõ¶­ûÿÿÿÿ8íÉ‚³ó1
+V
+java:S1854"8Remove this useless assignment to local variable "conn".(º¸³ª8å·²³ó1
+G
+java:S1481")Remove this unused "conn" local variable.(º¸³ª8å·²³ó1
+@
+java:S1128"Remove this duplicated import.(ÃÚ¢„şÿÿÿÿ8îÉ‚³ó1

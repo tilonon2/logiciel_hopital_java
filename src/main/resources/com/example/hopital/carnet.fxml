@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="610.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.CarnetController">
+   <children>
+      <Label layoutX="443.0" layoutY="99.0" text="Date" />
+      <Label layoutX="118.0" layoutY="182.0" text="Taille" />
+      <Label layoutX="117.0" layoutY="233.0" text="Poids" />
+      <Label layoutX="118.0" layoutY="289.0" text="Température Corporelle" />
+      <Label layoutX="125.0" layoutY="334.0" text="Pression Artérielle" />
+      <Label layoutX="125.0" layoutY="385.0" text="Fréquence cardiaque" />
+      <Label layoutX="126.0" layoutY="440.0" text="Fréquence Respiratoire" />
+      <Label layoutX="127.0" layoutY="495.0" text="Saturation en oxygène" />
+      <DatePicker layoutX="500.0" layoutY="95.0" />
+      <TextField layoutX="270.0" layoutY="178.0" />
+      <TextField layoutX="270.0" layoutY="229.0" />
+      <TextField layoutX="270.0" layoutY="285.0" />
+      <TextField layoutX="270.0" layoutY="330.0" />
+      <TextField layoutX="270.0" layoutY="381.0" />
+      <TextField layoutX="270.0" layoutY="436.0" />
+      <TextField layoutX="270.0" layoutY="491.0" />
+      <ImageView fitHeight="49.0" fitWidth="49.0" layoutX="627.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/logo_2.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="247.0" layoutY="25.0" text="Carnet de constantes">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

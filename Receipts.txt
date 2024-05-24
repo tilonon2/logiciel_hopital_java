@@ -1,0 +1,6 @@
+-----------------Reception Details----------------
+Motif : Prise de sang
+Date : 2024-05-31
+Nombre de Sièges: 2
+Siège(s) reservé(s): A2, A3
+-----------------Reception Details----------------
