@@ -32,15 +32,15 @@
             <Image url="@../../../images/logo_2.png" />
          </image>
       </ImageView>
-      <CheckBox layoutX="251.0" layoutY="158.0" mnemonicParsing="false" text="Analyses d'urine" />
+      <CheckBox layoutX="261.0" layoutY="176.0" mnemonicParsing="false" text="Analyses d'urine" />
       <CheckBox layoutX="520.0" layoutY="393.0" mnemonicParsing="false" text="Tomodensitométrie" />
       <CheckBox layoutX="39.0" layoutY="393.0" mnemonicParsing="false" text="Biopsie" />
       <CheckBox layoutX="305.0" layoutY="393.0" mnemonicParsing="false" text="Endoscopie" />
-      <CheckBox layoutX="33.0" layoutY="158.0" mnemonicParsing="false" text="Analyses de sang" />
-      <CheckBox layoutX="281.0" layoutY="263.0" mnemonicParsing="false" text="Echographie" />
-      <CheckBox layoutX="33.0" layoutY="263.0" mnemonicParsing="false" text="Radiographie" />
-      <CheckBox layoutX="519.0" layoutY="272.0" mnemonicParsing="false" text="Electrocardigramme" />
-      <CheckBox layoutX="481.0" layoutY="158.0" mnemonicParsing="false" text="Ecouvillonnage" />
+      <CheckBox layoutX="33.0" layoutY="176.0" mnemonicParsing="false" text="Analyses de sang" />
+      <CheckBox layoutX="281.0" layoutY="281.0" mnemonicParsing="false" text="Echographie" />
+      <CheckBox layoutX="33.0" layoutY="281.0" mnemonicParsing="false" text="Radiographie" />
+      <CheckBox layoutX="519.0" layoutY="281.0" mnemonicParsing="false" text="Electrocardigramme" />
+      <CheckBox layoutX="480.0" layoutY="176.0" mnemonicParsing="false" text="Ecouvillonnage" />
       <ImageView fitHeight="114.0" fitWidth="140.0" layoutX="58.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/922de906517a061393339e5c106ce611.jpg" />
