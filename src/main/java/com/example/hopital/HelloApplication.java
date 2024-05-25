@@ -37,6 +37,7 @@ public class HelloApplication extends Application {
         stage.initStyle(StageStyle.TRANSPARENT);
 
         // Pour déplacer la fenetre en faisant un cliquer clisser
+
         // root.setOnMousePressed(new EventHandler<MouseEvent>() {
         //     @Override
         //     public void handle (MouseEvent event) {
@@ -51,6 +52,8 @@ public class HelloApplication extends Application {
         //         stage.setY(event.getScreenY() - yOffset);
         //     }
         // });
+
+
         // Scene scene = new Scene(root);
 
         //Pour met le background en transparent

@@ -167,7 +167,7 @@
                         </Label>
                         <ScrollPane prefHeight="423.0" prefWidth="391.0" style="-fx-background-color: #ECF3FD;" styleClass="transparent" stylesheets="@../../../../../css/styleDash.css">
                            <content>
-                              <VBox fx:id="bookContainer" prefHeight="828.0" prefWidth="372.0" style="-fx-background-color: #ECF3FD;" styleClass="transparent" stylesheets="@../../../../../css/styleDash.css" />
+                              <VBox fx:id="bookContainer" prefHeight="828.0" prefWidth="372.0" spacing="10.0" style="-fx-background-color: #ECF3FD;" styleClass="transparent" stylesheets="@../../../../../css/styleDash.css" />
                            </content>
                         </ScrollPane>
                      </children>

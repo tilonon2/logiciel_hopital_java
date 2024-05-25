@@ -47,6 +47,35 @@
     -fx-border-style: solid;
     -fx-border-radius: 20;
 }
+/* Style bouton Enregistrement*/
+.boutonEnregistrement {
+    -fx-background-color: #fff;
+    -fx-text-fill: #5657D5;
+
+}
+
+.boutonEnregistrement:hover {
+    -fx-text-fill: #fff;
+    -fx-background-color: transparent;
+    -fx-border-color:  #fff;
+    -fx-border-vidth: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 50;
+}
+.bouton_NouveauPatient {
+    -fx-background-color: #5657D5;
+    -fx-text-fill: #fff;
+
+}
+
+.bouton_NouveauPatient:hover {
+    -fx-text-fill: #5657D5;
+    -fx-background-color: transparent;
+    -fx-border-color:  #5657D5;
+    -fx-border-vidth: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 50;
+}
 /* Style Bouton */
 .boutonStyle {
     -fx-background-color: #2F3192;
@@ -65,5 +94,10 @@
 /* Style Ombre */
 .shadow {
     -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 10);
+
+}
+
+.white_input {
+    -fx-text-fill: #fff;
 
 }

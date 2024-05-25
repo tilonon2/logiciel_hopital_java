@@ -212,25 +212,35 @@ public class SalleAttenteController {
         btnbook.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
                 int newWindow = onBookClicked();
-                Parent payee_details_parent;
-                try {
-                    payee_details_parent = FXMLLoader.load(getClass().getResource("priseContact.fxml"));
-                    Scene payee_details = new Scene(payee_details_parent);
-                    Stage app_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-
-                    if (newWindow == 1) {
-                        app_stage.hide();
-                        app_stage.setScene(payee_details);
-                        app_stage.show();
+                
+                if (newWindow == 1) {
+                    try {
+                        // Charger le fichier FXML
+                        Parent payee_details_parent = FXMLLoader.load(getClass().getResource("constante.fxml"));
+                        
+                        // Créer une nouvelle scène avec le parent chargé
+                        Scene payee_details_scene = new Scene(payee_details_parent);
+                        
+                        // Créer une nouvelle fenêtre (stage)
+                        Stage new_stage = new Stage();
+                        
+                        // Définir la scène de la nouvelle fenêtre
+                        new_stage.setScene(payee_details_scene);
+                        
+                        // Afficher la nouvelle fenêtre
+                        new_stage.show();
+                        
+                        // Optionnel: cacher la fenêtre actuelle si nécessaire
+                        // Stage current_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                        // current_stage.hide();
+        
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
                     }
-
-                } catch (IOException e1) {
-                    // TODO Auto-generated catch block
-                    e1.printStackTrace();
                 }
-
             }
         });
+        
         btnseat.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
                 onSeatClicked();
