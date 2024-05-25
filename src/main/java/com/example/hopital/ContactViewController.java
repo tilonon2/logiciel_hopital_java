@@ -38,16 +38,20 @@ public class ContactViewController {
 		});
 	}//initialize method ends
 
+	// private void onbtncloseClicked(){
+	// 			Stage stage = (Stage) btnclose.getScene().getWindow();
+	// 			stage.close();
+	// 			System.exit(0);
+	// }
 	private void onbtncloseClicked(){
-				Stage stage = (Stage) btnclose.getScene().getWindow();
-				stage.close();
-				System.exit(0);
+		Stage stage = (Stage) btnclose.getScene().getWindow();
+		stage.close();
 	}
 
 	private void onbtnreceiptClicked(){
 
 		try{
-			in = new Scanner(new File("Receipts.txt"));
+			in = new Scanner(new File("ConstanteX.txt"));
 		}
 
 		catch(Exception e){

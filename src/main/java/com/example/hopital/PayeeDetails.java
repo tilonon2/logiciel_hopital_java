@@ -172,10 +172,10 @@ public class PayeeDetails {
 
 	//pression artérielle
 
-	public String getPressionArtérielle() {
+	public String getPressionArterielle() {
 		return pression_arterielle;
 	}
-	public void setPressionArtérielle(String pression_arterielle) {
+	public void setPressionArterielle(String pression_arterielle) {
 		if (pression_arterielle.isEmpty() || (pression_arterielle.trim()).isEmpty()) {
 
 			throw new NullPointerException("Vous devez entrer votre pression arterielle.");
