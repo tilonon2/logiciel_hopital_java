@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="991.0" prefWidth="1082.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.ConsultationController">
+<AnchorPane prefHeight="980.0" prefWidth="1082.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.ConsultationController">
    <children>
       <Label layoutX="296.0" layoutY="71.0" prefHeight="34.0" prefWidth="248.0" text="Consultation médicale">
          <font>
@@ -44,10 +44,20 @@
       <TextArea layoutX="20.0" layoutY="705.0" prefHeight="74.0" prefWidth="914.0" />
       <TextArea layoutX="20.0" layoutY="807.0" prefHeight="62.0" prefWidth="914.0" />
       <Label layoutX="638.0" layoutY="884.0" text="Actes médicaux" />
-      <Button layoutX="386.0" layoutY="964.0" mnemonicParsing="false" text="Enregistrer la consultation" />
+      <Button layoutX="386.0" layoutY="950.0" mnemonicParsing="false" text="Enregistrer la consultation" />
       <ImageView fitHeight="120.0" fitWidth="143.0" layoutX="120.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/nouvellesconsultations.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="127.0" layoutX="153.0" layoutY="891.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/other/e84d2825d7f62fa951a4b4ca47470da9.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="74.0" fitWidth="35.0" layoutX="801.0" layoutY="890.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/other/e3337077b06b079eabdcffe7e360c6ee.jpg" />
          </image>
       </ImageView>
    </children>
