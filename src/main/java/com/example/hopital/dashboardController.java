@@ -83,7 +83,7 @@ public class dashboardController {
     // Méthode pour charger la vue dashboard
     @FXML
     private void loadDashboard() {
-        loadView("dash.fxml");
+        loadView("dashnew.fxml");
     }
 
     // Méthode pour charger la vue utilisateurs
