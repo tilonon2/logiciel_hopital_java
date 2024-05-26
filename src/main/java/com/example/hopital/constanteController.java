@@ -27,6 +27,8 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.HashMap;
+import java.util.Map;
 
 public class constanteController implements Initializable {
     private Label alertfrequencecardiaque;
@@ -86,6 +88,7 @@ public class constanteController implements Initializable {
     DatabaseList dl = new DatabaseList();
     //Tilo
     private DatabaseManager dbManager;
+    private Map<String, Integer> patientMap = new HashMap<>();
     public constanteController() {
         dbManager = DatabaseManager.getInstance();
     }
@@ -99,13 +102,89 @@ public class constanteController implements Initializable {
              ResultSet rs = pst.executeQuery()) {
 
             while (rs.next()) {
+                int id = rs.getInt("id");
                 String prenom = rs.getString("prenom");
-                allPatients.add(prenom);
+                if (!patientMap.containsKey(prenom)) {
+                    allPatients.add(prenom);
+                    patientMap.put(prenom, id);
+                }
             }
         } catch (SQLException ex) {
             Logger.getLogger(UtilisateursController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+
+// ajotuer les constante et siege
+@FXML
+private void insertConstanteData() {
+    String insertQuery = "INSERT INTO constante (taille, poids, frequence_cardiaque, frequence_respiratoire, "
+            + "pression_arterielle, temperature_corporelle, saturation_oxygene, id_patient) "
+            + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+    String updateQuery = "UPDATE siege SET id_patient = ?, id_constant = ? WHERE occupe = 1 AND id_patient = 0 LIMIT 1";
+
+
+
+    try (Connection conn = dbManager.getConnection();
+         PreparedStatement pstInsert = conn.prepareStatement(insertQuery, PreparedStatement.RETURN_GENERATED_KEYS);
+         PreparedStatement pstUpdate = conn.prepareStatement(updateQuery)) {
+
+
+        String selectedPrenom = liste_patient.getValue();
+        int selectedPatientId = -1;
+        if (selectedPrenom != null) {
+            selectedPatientId = patientMap.get(selectedPrenom);
+            //System.out.println("Selected Patient ID: " + selectedPatientId);
+            // Utilisez l'ID du patient selon vos besoins, par exemple, pour une requête de base de données
+        } else {
+            System.out.println("Aucun patient sélectionné");
+        }
+
+        // Récupérer les valeurs des TextField
+        double taille = Double.parseDouble(txttaille.getText());
+        double poids = Double.parseDouble(txtpoids.getText());
+        int frequenceCardiaque = Integer.parseInt(txtfrequencecardiaque.getText());
+        int frequenceRespiration = Integer.parseInt(txtfrequencerespiration.getText());
+        String pressionArterielle = txtpressionarterielle.getText();
+        double temperatureCorporelle = Double.parseDouble(txttemperature.getText());
+        double saturationOxygene = Double.parseDouble(txtsaturationoxygene11.getText());
+        //int idPatient = Integer.parseInt(txtsaturationoxygene11.getText()); // Utilisez le champ approprié pour id_patient
+
+        // Définir les valeurs pour la requête
+        pstInsert.setDouble(1, taille);
+        pstInsert.setDouble(2, poids);
+        pstInsert.setInt(3, frequenceCardiaque);
+        pstInsert.setInt(4, frequenceRespiration);
+        pstInsert.setString(5, pressionArterielle);
+        pstInsert.setDouble(6, temperatureCorporelle);
+        pstInsert.setDouble(7, saturationOxygene);
+        pstInsert.setInt(8, selectedPatientId);
+
+        pstInsert.executeUpdate();
+        System.out.println("Data inserted successfully.");
+
+        ResultSet generatedKeys = pstInsert.getGeneratedKeys();
+        if (generatedKeys.next()) {
+            int generatedConstantId = generatedKeys.getInt(1);
+
+            // Définir les valeurs pour la requête de mise à jour
+            pstUpdate.setInt(1, selectedPatientId);
+            pstUpdate.setInt(2, generatedConstantId);
+
+            // Exécuter la requête de mise à jour
+            pstUpdate.executeUpdate();
+            System.out.println("Data inserted and siege updated successfully. Constant ID: " + generatedConstantId);
+        }
+
+
+
+    } catch (SQLException ex) {
+        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (NumberFormatException ex) {
+        System.err.println("Invalid number format: " + ex.getMessage());
+    }
+}
 
 
     @Override
@@ -131,6 +210,8 @@ public class constanteController implements Initializable {
                 int newWindow = onConfirmClicked();
                 if (newWindow == 1) {
                     try {
+                        insertConstanteData();
+
                         // Charger le fichier FXML
                         Parent ticket_window = FXMLLoader.load(getClass().getResource("contactView.fxml"));
 
