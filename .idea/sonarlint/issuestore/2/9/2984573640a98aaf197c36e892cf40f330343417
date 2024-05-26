@@ -1,3 +1,390 @@
 
-]
-java:S2094"BRemove this empty class, write its code or make it an "interface".(Îæñ”ÿÿÿÿÿ
+m
+java:S1192ƒ"JDefine a constant instead of duplicating this literal "HH:mm:ss" 25 times.(»²ìÿÿÿÿÿ8Ş’“´û1
+¨
+java:S1192ú"ŠDefine a constant instead of duplicating this literal "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?" 25 times.(Û¤"8ß’“´û1
+j
+java:S1192‡"LDefine a constant instead of duplicating this literal "not working" 3 times.(ÌãÜŞ8ß’“´û1
+q
+java:S1192÷"NDefine a constant instead of duplicating this literal "Is Checked: " 25 times.(°àäğúÿÿÿÿ8à’“´û1
+k
+java:S1192ö"HDefine a constant instead of duplicating this literal "FXID: " 25 times.(÷±™Çşÿÿÿÿ8à’“´û1
+n	java:S117í"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄºûÉ8ã’“´û1
+n	java:S117ğ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÆÀÄ8ã’“´û1
+n	java:S117ó"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨ÉŒ8ã’“´û1
+F
+java:S1604†"(Make this anonymous inner class a lambda(ş¼ıè8æ’“´û1
+F
+java:S1604"(Make this anonymous inner class a lambda(ò¤ªµ8æ’“´û1
+F
+java:S1604–"(Make this anonymous inner class a lambda(áŸ™8æ’“´û1
+K
+java:S1604"(Make this anonymous inner class a lambda(š¯–·ùÿÿÿÿ8æ’“´û1
+F
+java:S1604¦"(Make this anonymous inner class a lambda( Ü¢¹8ç’“´û1
+K
+java:S1604®"(Make this anonymous inner class a lambda(»Ìœéøÿÿÿÿ8ç’“´û1
+F
+java:S1604¶"(Make this anonymous inner class a lambda(Âó¥Ú8ç’“´û1
+E
+java:S1604¾"(Make this anonymous inner class a lambda(†œ¯18ç’“´û1
+K
+java:S1604Æ"(Make this anonymous inner class a lambda(€ãµ¥şÿÿÿÿ8ç’“´û1
+K
+java:S1604Î"(Make this anonymous inner class a lambda(·åÿïúÿÿÿÿ8ç’“´û1
+K
+java:S1604Ö"(Make this anonymous inner class a lambda(Íííİşÿÿÿÿ8è’“´û1
+F
+java:S1604Ş"(Make this anonymous inner class a lambda(®©õĞ8è’“´û1
+K
+java:S1604æ"(Make this anonymous inner class a lambda(šÊúİÿÿÿÿÿ8è’“´û1
+K
+java:S1604î"(Make this anonymous inner class a lambda(ÑÌÜÓşÿÿÿÿ8è’“´û1
+K
+java:S1604ö"(Make this anonymous inner class a lambda(«¶É¨ùÿÿÿÿ8è’“´û1
+K
+java:S1604ş"(Make this anonymous inner class a lambda(ŠÖÀ¯şÿÿÿÿ8è’“´û1
+F
+java:S1604†"(Make this anonymous inner class a lambda(ôÎ¬˜8è’“´û1
+F
+java:S1604"(Make this anonymous inner class a lambda(ŠİÈÌ8è’“´û1
+E
+java:S1604–"(Make this anonymous inner class a lambda(Ä„¶L8é’“´û1
+K
+java:S1604¡"(Make this anonymous inner class a lambda(¾ïÙ³ùÿÿÿÿ8é’“´û1
+F
+java:S1604©"(Make this anonymous inner class a lambda(â‰œ8é’“´û1
+K
+java:S1604±"(Make this anonymous inner class a lambda(ğË¤Èûÿÿÿÿ8é’“´û1
+F
+java:S1604»"(Make this anonymous inner class a lambda(¼ğÄ8é’“´û1
+F
+java:S1604Ã"(Make this anonymous inner class a lambda(óà²Ö8é’“´û1
+F
+java:S1604Ë"(Make this anonymous inner class a lambda(¤Ø’Á8é’“´û1
+F
+java:S1604Õ"(Make this anonymous inner class a lambda(õ¥§“8ï’“´û1
+F
+java:S1604İ"(Make this anonymous inner class a lambda(Ö‘ç’8ï’“´û1
+F
+java:S1604å"(Make this anonymous inner class a lambda(®ÓÁ§8ğ’“´û1
+F
+java:S1604ï"(Make this anonymous inner class a lambda(—Ñş8ğ’“´û1
+F
+java:S1604÷"(Make this anonymous inner class a lambda(Çøåã8ğ’“´û1
+F
+java:S1604ÿ"(Make this anonymous inner class a lambda(õÚğò8ğ’“´û1
+F
+java:S1604‡"(Make this anonymous inner class a lambda(‹ÒµÊ8ğ’“´û1
+K
+java:S1604"(Make this anonymous inner class a lambda(³‡›åşÿÿÿÿ8ğ’“´û1
+E
+java:S1604—"(Make this anonymous inner class a lambda(—Ü|8ğ’“´û1
+F
+java:S1604Ÿ"(Make this anonymous inner class a lambda(­øğº8ñ’“´û1
+K
+java:S1604§"(Make this anonymous inner class a lambda(˜Âöâøÿÿÿÿ8ñ’“´û1
+F
+java:S1604¯"(Make this anonymous inner class a lambda(İ°û×8ñ’“´û1
+F
+java:S1604»"(Make this anonymous inner class a lambda(ößÛâ8ñ’“´û1
+F
+java:S1604Ä"(Make this anonymous inner class a lambda(ˆÏ¬‹8ñ’“´û1
+K
+java:S1604Ì"(Make this anonymous inner class a lambda(ò€š¹ûÿÿÿÿ8ñ’“´û1
+F
+java:S1604Ö"(Make this anonymous inner class a lambda(Êçã¾8ò’“´û1
+F
+java:S1604Ş"(Make this anonymous inner class a lambda(æ±áô8ò’“´û1
+K
+java:S1604æ"(Make this anonymous inner class a lambda(½µË•şÿÿÿÿ8ò’“´û1
+K
+java:S1604ğ"(Make this anonymous inner class a lambda(åŸúıÿÿÿÿ8ò’“´û1
+F
+java:S1604ø"(Make this anonymous inner class a lambda(®ÑÁ¡8ò’“´û1
+F
+java:S1604€"(Make this anonymous inner class a lambda(‹¸¾ô8ò’“´û1
+K
+java:S1604‰"(Make this anonymous inner class a lambda(†êÒŠıÿÿÿÿ8ò’“´û1
+K
+java:S1604‘"(Make this anonymous inner class a lambda(‡ê‘¿øÿÿÿÿ8ó’“´û1
+F
+java:S1604™"(Make this anonymous inner class a lambda(ƒàíœ8ó’“´û1
+K
+java:S1604¡"(Make this anonymous inner class a lambda(–±Úˆÿÿÿÿÿ8ó’“´û1
+F
+java:S1604©"(Make this anonymous inner class a lambda(Ø§úï8ó’“´û1
+K
+java:S1604±"(Make this anonymous inner class a lambda(º¿Åøûÿÿÿÿ8ó’“´û1
+E
+java:S1604¹"(Make this anonymous inner class a lambda(úÜ²8ô’“´û1
+E
+java:S1604Á"(Make this anonymous inner class a lambda(Ú¦‚_8ô’“´û1
+F
+java:S1604É"(Make this anonymous inner class a lambda(‘¦ã‰8ô’“´û1
+K
+java:S1604Õ"(Make this anonymous inner class a lambda(Ï¥ ‚ûÿÿÿÿ8õ’“´û1
+K
+java:S1604İ"(Make this anonymous inner class a lambda(Àò£¾üÿÿÿÿ8õ’“´û1
+K
+java:S1604å"(Make this anonymous inner class a lambda(Ö÷¼øÿÿÿÿ8õ’“´û1
+F
+java:S1604ï"(Make this anonymous inner class a lambda(½ áŠ8õ’“´û1
+K
+java:S1604÷"(Make this anonymous inner class a lambda(¢ùÿ–ıÿÿÿÿ8ö’“´û1
+K
+java:S1604ÿ"(Make this anonymous inner class a lambda(«Ìßùÿÿÿÿ8ö’“´û1
+K
+java:S1604ˆ"(Make this anonymous inner class a lambda(û²†øÿÿÿÿ8ö’“´û1
+K
+java:S1604‘"(Make this anonymous inner class a lambda(êàÕéûÿÿÿÿ8ö’“´û1
+F
+java:S1604™"(Make this anonymous inner class a lambda(”„Æ‹8ö’“´û1
+K
+java:S1604£"(Make this anonymous inner class a lambda(Áë¢µøÿÿÿÿ8ö’“´û1
+K
+java:S1604«"(Make this anonymous inner class a lambda(öÌ‹Øûÿÿÿÿ8ö’“´û1
+F
+java:S1604³"(Make this anonymous inner class a lambda(ùå–À8ö’“´û1
+F
+java:S1604»"(Make this anonymous inner class a lambda(¤€‹¤8÷’“´û1
+F
+java:S1604Ã"(Make this anonymous inner class a lambda(¢ÕôŒ8÷’“´û1
+F
+java:S1604Ë"(Make this anonymous inner class a lambda(êİÛ¤8÷’“´û1
+F
+java:S1604Ó"(Make this anonymous inner class a lambda(¬”ğ8÷’“´û1
+K
+java:S1604Û"(Make this anonymous inner class a lambda(í™¨ıÿÿÿÿ8÷’“´û1
+K
+java:S1604ã"(Make this anonymous inner class a lambda(‡¹ıàûÿÿÿÿ8÷’“´û1
+c
+java:S1659#"ADeclare "exit" and all following declarations on a separate line.(œŒæÚúÿÿÿÿ8¦š“´û1
+Y	java:S125Å"<This block of commented-out lines of code should be removed.(“›Ùï8Äš“´û1
+Y	java:S125Ê"<This block of commented-out lines of code should be removed.(¸İØÍ8Åš“´û1
+^	java:S125Ì"<This block of commented-out lines of code should be removed.(‘´ßäûÿÿÿÿ8Åš“´û1
+Y	java:S125ü"<This block of commented-out lines of code should be removed.(•Î»ß8öš“´û1
+M	java:S106ö"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8›œ“´û1
+M	java:S106÷"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8›œ“´û1
+W
+java:S1117ÿ"9Rename "date" which hides the field declared at line 116.(ŞíĞ8œ“´û1
+?	java:S131œ""Add a default case to this switch.(É±±œ8©œ“´û1
+p
+java:S3776…"RRefactor this method to reduce its Cognitive Complexity from 49 to the 15 allowed.(àœÃ³8µœ“´û1
+?	java:S131†""Add a default case to this switch.(Å¡¤×8·œ“´û1
+H	java:S106‡"+Replace this use of System.out by a logger.(ÌãÜŞ8·œ“´û1
+p
+java:S3776õ"RRefactor this method to reduce its Cognitive Complexity from 49 to the 15 allowed.(Šêö®8Àœ“´û1
+?	java:S131÷""Add a default case to this switch.(İ×ø—8Âœ“´û1
+H	java:S106ø"+Replace this use of System.out by a logger.(ÌãÜŞ8Âœ“´û1
+v
+java:S3776ä	"SRefactor this method to reduce its Cognitive Complexity from 145 to the 15 allowed.(œ­´úÿÿÿÿ8Öœ“´û1
+D	java:S131å	""Add a default case to this switch.(¢©‘×øÿÿÿÿ8Üœ“´û1
+H	java:S106æ	"+Replace this use of System.out by a logger.(ÌãÜŞ8Üœ“´û1
+^	java:S125ñ	"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8İœ“´û1
+M	java:S106õ	"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8Şœ“´û1
+H	java:S106ö	"+Replace this use of System.out by a logger.(ÏÚĞº8Şœ“´û1
+M	java:S106ú	"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8Şœ“´û1
+M	java:S106û	"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8ßœ“´û1
+W
+java:S1117ƒ
+"9Rename "date" which hides the field declared at line 116.(ŞíĞ8ßœ“´û1
+^	java:S125¢
+"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8ãœ“´û1
+M	java:S106¦
+"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8äœ“´û1
+H	java:S106§
+"+Replace this use of System.out by a logger.(ÏÚĞº8äœ“´û1
+M	java:S106«
+"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8äœ“´û1
+M	java:S106¬
+"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8äœ“´û1
+W
+java:S1117´
+"9Rename "date" which hides the field declared at line 116.(ŞíĞ8åœ“´û1
+^	java:S125Í
+"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8ëœ“´û1
+M	java:S106Ñ
+"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8ìœ“´û1
+H	java:S106Ò
+"+Replace this use of System.out by a logger.(ÏÚĞº8íœ“´û1
+M	java:S106Ö
+"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8íœ“´û1
+M	java:S106×
+"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8íœ“´û1
+W
+java:S1117ß
+"9Rename "date" which hides the field declared at line 116.(ŞíĞ8îœ“´û1
+^	java:S125ø
+"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8óœ“´û1
+M	java:S106ü
+"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8ôœ“´û1
+H	java:S106ı
+"+Replace this use of System.out by a logger.(ÏÚĞº8ôœ“´û1
+M	java:S106"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8ôœ“´û1
+M	java:S106‚"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8õœ“´û1
+W
+java:S1117Š"9Rename "date" which hides the field declared at line 116.(ŞíĞ8õœ“´û1
+^	java:S125£"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8ıœ“´û1
+M	java:S106§"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8şœ“´û1
+H	java:S106¨"+Replace this use of System.out by a logger.(ÏÚĞº8şœ“´û1
+M	java:S106¬"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8ÿœ“´û1
+M	java:S106­"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8€“´û1
+W
+java:S1117µ"9Rename "date" which hides the field declared at line 116.(ŞíĞ8“´û1
+^	java:S125Î"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8‡“´û1
+M	java:S106Ò"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8ˆ“´û1
+H	java:S106Ó"+Replace this use of System.out by a logger.(ÏÚĞº8ˆ“´û1
+M	java:S106×"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8‰“´û1
+M	java:S106Ø"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8‰“´û1
+W
+java:S1117à"9Rename "date" which hides the field declared at line 116.(ŞíĞ8Š“´û1
+^	java:S125ú"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8“´û1
+M	java:S106ş"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8“´û1
+H	java:S106ÿ"+Replace this use of System.out by a logger.(ÏÚĞº8“´û1
+M	java:S106ƒ"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8“´û1
+M	java:S106„"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8“´û1
+W
+java:S1117Œ"9Rename "date" which hides the field declared at line 116.(ŞíĞ8“´û1
+^	java:S125¥"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8““´û1
+M	java:S106©"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8““´û1
+H	java:S106ª"+Replace this use of System.out by a logger.(ÏÚĞº8”“´û1
+M	java:S106®"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8”“´û1
+M	java:S106¯"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8”“´û1
+W
+java:S1117·"9Rename "date" which hides the field declared at line 116.(ŞíĞ8•“´û1
+^	java:S125Ğ"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8™“´û1
+M	java:S106Ô"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8™“´û1
+H	java:S106Õ"+Replace this use of System.out by a logger.(ÏÚĞº8š“´û1
+M	java:S106Ù"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8š“´û1
+M	java:S106Ú"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8š“´û1
+W
+java:S1117â"9Rename "date" which hides the field declared at line 116.(ŞíĞ8›“´û1
+^	java:S125û"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8“´û1
+M	java:S106ÿ"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8“´û1
+H	java:S106€"+Replace this use of System.out by a logger.(ÏÚĞº8Ÿ“´û1
+M	java:S106„"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8Ÿ“´û1
+M	java:S106…"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8Ÿ“´û1
+W
+java:S1117"9Rename "date" which hides the field declared at line 116.(ŞíĞ8 “´û1
+^	java:S125¦"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8£“´û1
+M	java:S106ª"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8¤“´û1
+H	java:S106«"+Replace this use of System.out by a logger.(ÏÚĞº8¤“´û1
+M	java:S106¯"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8¤“´û1
+M	java:S106°"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8¤“´û1
+W
+java:S1117¸"9Rename "date" which hides the field declared at line 116.(ŞíĞ8¥“´û1
+^	java:S125Ñ"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8¨“´û1
+M	java:S106Õ"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8©“´û1
+H	java:S106Ö"+Replace this use of System.out by a logger.(ÏÚĞº8©“´û1
+M	java:S106Ú"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8©“´û1
+M	java:S106Û"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8ª“´û1
+W
+java:S1117ã"9Rename "date" which hides the field declared at line 116.(ŞíĞ8ª“´û1
+^	java:S125ı"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8®“´û1
+M	java:S106"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8®“´û1
+H	java:S106‚"+Replace this use of System.out by a logger.(ÏÚĞº8®“´û1
+M	java:S106†"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8¯“´û1
+M	java:S106‡"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8¯“´û1
+W
+java:S1117"9Rename "date" which hides the field declared at line 116.(ŞíĞ8¯“´û1
+^	java:S125¨"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8³“´û1
+M	java:S106¬"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8³“´û1
+H	java:S106­"+Replace this use of System.out by a logger.(ÏÚĞº8³“´û1
+M	java:S106±"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8´“´û1
+M	java:S106²"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8´“´û1
+W
+java:S1117º"9Rename "date" which hides the field declared at line 116.(ŞíĞ8µ“´û1
+^	java:S125Ó"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8·“´û1
+M	java:S106×"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8¸“´û1
+H	java:S106Ø"+Replace this use of System.out by a logger.(ÏÚĞº8¸“´û1
+M	java:S106Ü"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8¸“´û1
+M	java:S106İ"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8¹“´û1
+W
+java:S1117å"9Rename "date" which hides the field declared at line 116.(ŞíĞ8º“´û1
+^	java:S125ş"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8½“´û1
+M	java:S106‚"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8¾“´û1
+H	java:S106ƒ"+Replace this use of System.out by a logger.(ÏÚĞº8¾“´û1
+M	java:S106‡"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8¾“´û1
+M	java:S106ˆ"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8¾“´û1
+W
+java:S1117"9Rename "date" which hides the field declared at line 116.(ŞíĞ8¿“´û1
+^	java:S125©"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8Ä“´û1
+M	java:S106­"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8Å“´û1
+H	java:S106®"+Replace this use of System.out by a logger.(ÏÚĞº8Å“´û1
+M	java:S106²"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8Æ“´û1
+M	java:S106³"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8Æ“´û1
+W
+java:S1117»"9Rename "date" which hides the field declared at line 116.(ŞíĞ8È“´û1
+^	java:S125Ô"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8Î“´û1
+M	java:S106Ø"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8Ï“´û1
+H	java:S106Ù"+Replace this use of System.out by a logger.(ÏÚĞº8Ğ“´û1
+M	java:S106İ"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8Ğ“´û1
+M	java:S106Ş"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8Ñ“´û1
+W
+java:S1117æ"9Rename "date" which hides the field declared at line 116.(ŞíĞ8Ò“´û1
+^	java:S125€"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8Õ“´û1
+M	java:S106„"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8Ö“´û1
+H	java:S106…"+Replace this use of System.out by a logger.(ÏÚĞº8Ö“´û1
+M	java:S106‰"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8Ö“´û1
+M	java:S106Š"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8Ö“´û1
+W
+java:S1117’"9Rename "date" which hides the field declared at line 116.(ŞíĞ8×“´û1
+^	java:S125«"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8Ú“´û1
+M	java:S106¯"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8Ú“´û1
+H	java:S106°"+Replace this use of System.out by a logger.(ÏÚĞº8Û“´û1
+M	java:S106´"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8Û“´û1
+M	java:S106µ"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8Û“´û1
+W
+java:S1117½"9Rename "date" which hides the field declared at line 116.(ŞíĞ8Ü“´û1
+^	java:S125Ö"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8ß“´û1
+M	java:S106Ú"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8ß“´û1
+H	java:S106Û"+Replace this use of System.out by a logger.(ÏÚĞº8à“´û1
+M	java:S106ß"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8à“´û1
+M	java:S106à"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8à“´û1
+W
+java:S1117è"9Rename "date" which hides the field declared at line 116.(ŞíĞ8á“´û1
+^	java:S125"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8ã“´û1
+M	java:S106…"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8ä“´û1
+H	java:S106†"+Replace this use of System.out by a logger.(ÏÚĞº8ä“´û1
+M	java:S106Š"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8ä“´û1
+M	java:S106‹"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8å“´û1
+W
+java:S1117“"9Rename "date" which hides the field declared at line 116.(ŞíĞ8å“´û1
+^	java:S125¬"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8è“´û1
+M	java:S106°"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8é“´û1
+H	java:S106±"+Replace this use of System.out by a logger.(ÏÚĞº8é“´û1
+M	java:S106µ"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8é“´û1
+M	java:S106¶"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8é“´û1
+W
+java:S1117¾"9Rename "date" which hides the field declared at line 116.(ŞíĞ8ê“´û1
+^	java:S125×"<This block of commented-out lines of code should be removed.(ÄÀ¢²øÿÿÿÿ8ñ“´û1
+M	java:S106Û"+Replace this use of System.out by a logger.(Ï—áÌùÿÿÿÿ8ò“´û1
+H	java:S106Ü"+Replace this use of System.out by a logger.(ÏÚĞº8ò“´û1
+M	java:S106à"+Replace this use of System.out by a logger.(÷±™Çşÿÿÿÿ8ó“´û1
+M	java:S106á"+Replace this use of System.out by a logger.(°àäğúÿÿÿÿ8ó“´û1
+W
+java:S1117é"9Rename "date" which hides the field declared at line 116.(ŞíĞ8ô“´û1
+u
+java:S3776ÿ"RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(é·Ùíûÿÿÿÿ8÷“´û1
+[
+java:S1854ú"8Remove this useless assignment to local variable "file".(Öÿıÿÿÿÿ8ù“´û1
+^	java:S125‚"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8ú“´û1
+^	java:S125†"<This block of commented-out lines of code should be removed.(ïõİûÿÿÿÿ8ú“´û1
+Y	java:S125˜"<This block of commented-out lines of code should be removed.(½‘Ñ³8ı“´û1
+Y	java:S125â"<This block of commented-out lines of code should be removed.(»Ôéˆ8†“´û1
+Y	java:S125÷"<This block of commented-out lines of code should be removed.(Ã¥¥·8†“´û1
+L
+java:S1481ú")Remove this unused "file" local variable.(Öÿıÿÿÿÿ8‹“´û1
+^	java:S125€"<This block of commented-out lines of code should be removed.(§¡á”ùÿÿÿÿ8“´û1
+^	java:S125ˆ"<This block of commented-out lines of code should be removed.(£æ×£ÿÿÿÿÿ8“´û1
+`
+java:S1126¥"BReplace this if-then-else statement by a single method invocation.(¡Õ“¹8““´û1
+K
+java:S1128".Remove this unused import 'javafx.scene.Node'.(ÑÖ¬ï8•“´û1
+X
+java:S1128";Remove this unused import 'javafx.scene.layout.AnchorPane'.(Ø µ8•“´û1
+U
+java:S1128"8Remove this unused import 'java.time.DateTimeException'.(úÛ”™8•“´û1
+ë
+java:S6541ä	"ÇA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 702 to 64, Complexity from 50 to 14, Nesting Level from 3 to 2, Number of Variables from 240 to 6.(œ­´úÿÿÿÿ8‹¡“´û1

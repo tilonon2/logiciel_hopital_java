@@ -94,7 +94,7 @@ public class dashboardController {
 
     @FXML
     private void loadConsultation() {
-        loadView("consultation.fxml");
+        loadView("consultation_new.fxml");
     }
 
     @FXML
