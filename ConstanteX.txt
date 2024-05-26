@@ -1,0 +1,33 @@
+Taille : 15
+Poids : 11
+Temperature Corporelle : 15
+Frequence Cardiaque : 51
+Pression Artérielle : 15
+Fréquence Respiratoire : 15
+Saturation en Oxygène : 15
+
+------------------------------------------------Taille : 1
+Poids : 12
+Temperature Corporelle : 121
+Frequence Cardiaque : 12
+Pression Artérielle : 12
+Fréquence Respiratoire : 12
+Saturation en Oxygène : 2
+
+------------------------------------------------Taille : 121
+Poids : 21
+Temperature Corporelle : 21
+Frequence Cardiaque : 21
+Pression Artérielle : 21
+Fréquence Respiratoire : 21
+Saturation en Oxygène : 21
+
+------------------------------------------------Taille : 12
+Poids : 12
+Temperature Corporelle : 21
+Frequence Cardiaque : 12
+Pression Artérielle : 121
+Fréquence Respiratoire : 12
+Saturation en Oxygène : 21
+
+------------------------------------------------
