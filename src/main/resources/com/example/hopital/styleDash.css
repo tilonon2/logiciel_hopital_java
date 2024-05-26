@@ -124,3 +124,71 @@
     -fx-border-style: solid;
     -fx-border-radius: 8;
 }
+
+.boutontest {
+    -fx-background-color: #2F3192;
+    -fx-text-fill: #fff;
+
+}
+
+.boutontest:hover {
+    -fx-text-fill: #2F3192;
+    -fx-background-color: transparent;
+    -fx-border-color: #2F3192;
+    -fx-border-vidth: 1px;
+    -fx-border-style: solid;
+}
+.boutontest2 {
+    -fx-background-color: transparent;
+    -fx-text-fill: #8E95A5;
+}
+.boutontest2:hover {
+    -fx-text-fill: #2F3192;
+    -fx-border-color: #2F3192;
+    -fx-border-width: 0px 0px 1px 0px;
+}
+.boutontest2:hover #MaterielChange {
+    -fx-fill: #2F3192;
+}
+.boutontest3 {
+    -fx-background-color: transparent;
+    -fx-text-fill: #8E95A5;
+}
+.boutontest3:hover {
+    -fx-text-fill: #2F3192;
+    -fx-border-color: #2F3192;
+    -fx-border-width: 0px 0px 0px 3px;
+}
+.boutontest3:hover #img_specialiste {
+    -fx-fill: #2F3192;
+}
+.boutontest3:hover #img_patient {
+    -fx-fill: #2F3192;
+}
+.boutontest3:hover #img_medicament {
+    -fx-fill: #2F3192;
+}
+.boutontest3:hover #img_rdv {
+    -fx-fill: #2F3192;
+}
+.boutontest3:hover #img_traitement {
+    -fx-fill: #2F3192;
+}
+.boutontest3:hover #img_consultation {
+    -fx-fill: #2F3192;
+}
+.boutontest3:hover #img_attente {
+    -fx-fill: #2F3192;
+}
+.boutontest3:hover #img_type_user {
+    -fx-fill: #2F3192;
+}
+.boutontest3:hover #img_user {
+    -fx-fill: #2F3192;
+}
+.boutontest3:hover #MaterielChange11111 {
+    -fx-fill: #2F3192;
+}
+.boutontest3:hover #img_dashboard {
+    -fx-fill: #2F3192;
+}
