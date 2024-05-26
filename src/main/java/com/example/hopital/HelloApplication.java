@@ -34,7 +34,7 @@ public class HelloApplication extends Application {
         //Parent root = FXMLLoader.load(getClass().getResource("calendar.fxml"));
         //stage.initStyle(StageStyle.TRANSPARENT);
         //Pour cacher les boutons du haut
-        stage.initStyle(StageStyle.TRANSPARENT);
+        //stage.initStyle(StageStyle.TRANSPARENT);
 
         // Pour déplacer la fenetre en faisant un cliquer clisser
 

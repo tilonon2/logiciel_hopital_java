@@ -1,6 +1,6 @@
 -----------------Reception Details----------------
-Motif : Prise de sang
-Date : 2024-05-31
-Nombre de Sièges: 2
-Siège(s) reservé(s): A2, A3
+Motif : Ecographie
+Date : null
+Nombre de Sièges: 1
+Siège(s) reservé(s): A1
 -----------------Reception Details----------------

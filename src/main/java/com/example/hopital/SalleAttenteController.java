@@ -15,11 +15,18 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.sql.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.DateTimeException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SalleAttenteController {
     SeatDetails sd = new SeatDetails();
@@ -148,6 +155,8 @@ public class SalleAttenteController {
     @FXML
     private ImageView ic1;
 
+    private DatabaseManager dbManager;
+
     @FXML
     private ImageView ic2;
 
@@ -198,6 +207,11 @@ public class SalleAttenteController {
     Image image1 = new Image(getClass().getResource("/images/chaise/rouge.png").toExternalForm());
 
 
+    public SalleAttenteController() {
+        dbManager = DatabaseManager.getInstance();
+    }
+
+
     @FXML private void initialize() {
 
         movies.setValue("-Selectionner le motif");
@@ -208,6 +222,8 @@ public class SalleAttenteController {
         movies.getItems().add("PCR");
         movies.getItems().add("Autre examen!");
 
+        loadSeatData();
+
 
         btnbook.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
@@ -215,6 +231,8 @@ public class SalleAttenteController {
                 
                 if (newWindow == 1) {
                     try {
+
+
                         // Charger le fichier FXML
                         Parent payee_details_parent = FXMLLoader.load(getClass().getResource("constante_constante.fxml"));
                         
@@ -858,6 +876,156 @@ public class SalleAttenteController {
     }//ends intialize methods
 
 
+    @FXML
+    private void updateSeatStatus(ActionEvent event) {
+
+        CheckBox source = (CheckBox) event.getSource();
+        String fxid = source.getId();
+        boolean isChecked = source.isSelected();
+
+        System.out.println("FXID: " + fxid);
+        System.out.println("Is Checked: " + isChecked);
+
+        // Effectuez la mise à jour de la base de données
+        String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+        try (Connection conn = dbManager.getConnection();
+             PreparedStatement pst = conn.prepareStatement(query)) {
+
+            // Récupérer la date et l'heure actuelles
+            LocalDate date = LocalDate.now();
+            LocalTime heure = LocalTime.now();
+
+            // Formater l'heure pour l'affichage
+            DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+            String heureFormate = heure.format(heureFormatter);
+
+            pst.setBoolean(1, isChecked);
+            pst.setDate(2, Date.valueOf(date));
+            pst.setString(3, heureFormate);
+            pst.setString(4, movies.getValue());
+            pst.setString(5, fxid);
+
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+
+    private void loadSeatData() {
+
+        String query = "SELECT id FROM siege WHERE occupe = TRUE";
+        try (Connection conn = dbManager.getConnection();
+             PreparedStatement pst = conn.prepareStatement(query);
+             ResultSet rs = pst.executeQuery()) {
+
+            while (rs.next()) {
+                String seatNumber = rs.getString("id");
+                switch (seatNumber) {
+                    case "a1":
+                        a1.setSelected(true);
+                        ia1.setImage(image1);
+                        break;
+                    case "a2":
+                        a2.setSelected(true);
+                        ia2.setImage(image1);
+                        break;
+                    case "a3":
+                        a3.setSelected(true);
+                        ia3.setImage(image1);
+                        break;
+                    case "a4":
+                        a4.setSelected(true);
+                        ia4.setImage(image1);
+                        break;
+                    case "a5":
+                        a5.setSelected(true);
+                        ia5.setImage(image1);
+                        break;
+                    case "a6":
+                        a6.setSelected(true);
+                        ia6.setImage(image1);
+                        break;
+                    case "b1":
+                        b1.setSelected(true);
+                        ib1.setImage(image1);
+                        break;
+                    case "b2":
+                        b2.setSelected(true);
+                        ib2.setImage(image1);
+                        break;
+                    case "b3":
+                        b3.setSelected(true);
+                        ib3.setImage(image1);
+                        break;
+                    case "b4":
+                        b4.setSelected(true);
+                        ib4.setImage(image1);
+                        break;
+                    case "b5":
+                        b5.setSelected(true);
+                        ib5.setImage(image1);
+                        break;
+                    case "b6":
+                        b6.setSelected(true);
+                        ib6.setImage(image1);
+                        break;
+                    case "c1":
+                        c1.setSelected(true);
+                        ic1.setImage(image1);
+                        break;
+                    case "c2":
+                        c2.setSelected(true);
+                        ic2.setImage(image1);
+                        break;
+                    case "c3":
+                        c3.setSelected(true);
+                        ic3.setImage(image1);
+                        break;
+                    case "c4":
+                        c4.setSelected(true);
+                        ic4.setImage(image1);
+                        break;
+                    case "c5":
+                        c5.setSelected(true);
+                        ic5.setImage(image1);
+                        break;
+                    case "c6":
+                        c6.setSelected(true);
+                        ic6.setImage(image1);
+                        break;
+                    case "d1":
+                        d1.setSelected(true);
+                        id1.setImage(image1);
+                        break;
+                    case "d2":
+                        d2.setSelected(true);
+                        id2.setImage(image1);
+                        break;
+                    case "d3":
+                        d3.setSelected(true);
+                        id3.setImage(image1);
+                        break;
+                    case "d4":
+                        d4.setSelected(true);
+                        id4.setImage(image1);
+                        break;
+                    case "d5":
+                        d5.setSelected(true);
+                        id5.setImage(image1);
+                        break;
+                    case "d6":
+                        d6.setSelected(true);
+                        id6.setImage(image1);
+                        break;
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+
     private void onmousedragged(){
         switch(enter){
             case 0 :System.out.print("not working");
@@ -1091,6 +1259,50 @@ public class SalleAttenteController {
                     ia1.setImage(image);
                 }else{
                     ia1.setImage(image1);
+
+
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = a1.getId();
+                    boolean isChecked = a1.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+
+
+
+
+
                 }
                 break;
             case 2 :
@@ -1098,6 +1310,42 @@ public class SalleAttenteController {
                     ia2.setImage(image);
                 else{
                     ia2.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = a2.getId();
+                    boolean isChecked = a2.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 3 :
@@ -1105,6 +1353,42 @@ public class SalleAttenteController {
                     ia3.setImage(image);
                 else{
                     ia3.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = a3.getId();
+                    boolean isChecked = a3.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 4 :
@@ -1112,6 +1396,42 @@ public class SalleAttenteController {
                     ia4.setImage(image);
                 else{
                     ia4.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = a4.getId();
+                    boolean isChecked = a4.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 5 :
@@ -1119,6 +1439,42 @@ public class SalleAttenteController {
                     ia5.setImage(image);
                 else{
                     ia5.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = a5.getId();
+                    boolean isChecked = a5.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 6 :
@@ -1126,6 +1482,42 @@ public class SalleAttenteController {
                     ia6.setImage(image);
                 else{
                     ia6.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = a6.getId();
+                    boolean isChecked = a6.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             // ->b
@@ -1134,6 +1526,42 @@ public class SalleAttenteController {
                     ib1.setImage(image);
                 else{
                     ib1.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = b1.getId();
+                    boolean isChecked = b1.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 13 :
@@ -1141,6 +1569,42 @@ public class SalleAttenteController {
                     ib2.setImage(image);
                 else{
                     ib2.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = b2.getId();
+                    boolean isChecked = b2.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 14 :
@@ -1148,6 +1612,42 @@ public class SalleAttenteController {
                     ib3.setImage(image);
                 else{
                     ib3.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = b3.getId();
+                    boolean isChecked = b3.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 15 :
@@ -1155,6 +1655,42 @@ public class SalleAttenteController {
                     ib4.setImage(image);
                 else{
                     ib4.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = b4.getId();
+                    boolean isChecked = b4.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 16 :
@@ -1162,6 +1698,42 @@ public class SalleAttenteController {
                     ib5.setImage(image);
                 else{
                     ib5.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = b5.getId();
+                    boolean isChecked = b5.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 17 :
@@ -1169,6 +1741,42 @@ public class SalleAttenteController {
                     ib6.setImage(image);
                 else{
                     ib6.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = b6.getId();
+                    boolean isChecked = b6.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             // ->c
@@ -1177,6 +1785,42 @@ public class SalleAttenteController {
                     ic1.setImage(image);
                 else{
                     ic1.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = c1.getId();
+                    boolean isChecked = c1.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 23 :
@@ -1184,6 +1828,42 @@ public class SalleAttenteController {
                     ic2.setImage(image);
                 else{
                     ic2.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = c2.getId();
+                    boolean isChecked = c2.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 24 :
@@ -1191,6 +1871,42 @@ public class SalleAttenteController {
                     ic3.setImage(image);
                 else{
                     ic3.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = c3.getId();
+                    boolean isChecked = c3.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 25 :
@@ -1198,6 +1914,42 @@ public class SalleAttenteController {
                     ic4.setImage(image);
                 else{
                     ic4.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = c4.getId();
+                    boolean isChecked = c4.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 26 :
@@ -1205,6 +1957,42 @@ public class SalleAttenteController {
                     ic5.setImage(image);
                 else{
                     ic5.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = c5.getId();
+                    boolean isChecked = c5.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 27 :
@@ -1212,6 +2000,42 @@ public class SalleAttenteController {
                     ic6.setImage(image);
                 else{
                     ic6.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = c6.getId();
+                    boolean isChecked = c6.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             // ->d
@@ -1220,6 +2044,42 @@ public class SalleAttenteController {
                     id1.setImage(image);
                 else{
                     id1.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = d1.getId();
+                    boolean isChecked = d1.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 33 :
@@ -1227,6 +2087,42 @@ public class SalleAttenteController {
                     id2.setImage(image);
                 else{
                     id2.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = d2.getId();
+                    boolean isChecked = d2.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 34 :
@@ -1234,6 +2130,42 @@ public class SalleAttenteController {
                     id3.setImage(image);
                 else{
                     id3.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = d3.getId();
+                    boolean isChecked = d3.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 35 :
@@ -1241,6 +2173,42 @@ public class SalleAttenteController {
                     id4.setImage(image);
                 else{
                     id4.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = d4.getId();
+                    boolean isChecked = d4.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 36 :
@@ -1248,6 +2216,42 @@ public class SalleAttenteController {
                     id5.setImage(image);
                 else{
                     id5.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = d5.getId();
+                    boolean isChecked = d5.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
             case 37 :
@@ -1255,6 +2259,42 @@ public class SalleAttenteController {
                     id6.setImage(image);
                 else{
                     id6.setImage(image1);
+
+                    //CheckBox source = (CheckBox) event.getSource();
+                    String fxid = d6.getId();
+                    boolean isChecked = d6.isSelected();
+
+                    System.out.println(isChecked);
+                    System.out.println(fxid);
+
+
+
+                    System.out.println("FXID: " + fxid);
+                    System.out.println("Is Checked: " + isChecked);
+
+                    // Effectuez la mise à jour de la base de données
+                    String query = "UPDATE siege SET occupe = ?, date = ?, heure = ?, motif = ? WHERE id = ?";
+                    try (Connection conn = dbManager.getConnection();
+                         PreparedStatement pst = conn.prepareStatement(query)) {
+
+                        // Récupérer la date et l'heure actuelles
+                        LocalDate date = LocalDate.now();
+                        LocalTime heure = LocalTime.now();
+
+                        // Formater l'heure pour l'affichage
+                        DateTimeFormatter heureFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                        String heureFormate = heure.format(heureFormatter);
+
+                        pst.setBoolean(1, isChecked);
+                        pst.setDate(2, Date.valueOf(date));
+                        pst.setString(3, heureFormate);
+                        pst.setString(4, movies.getValue());
+                        pst.setString(5, fxid);
+
+                        pst.executeUpdate();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleAttenteController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 break;
         }
@@ -1276,6 +2316,7 @@ public class SalleAttenteController {
 
         try{
             sd.setMovies(movies.getValue());
+
         }
 
         catch (NullPointerException e) {
@@ -1284,7 +2325,7 @@ public class SalleAttenteController {
             alert.setContentText("Erreur : vous n'avez pas choisi le motif, veuillez en choisir!!");
             alert.show();}
 
-        try{
+        /*try{
             sd.setDate(date.getValue());
         }
 
@@ -1304,7 +2345,7 @@ public class SalleAttenteController {
             temp = 1;
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Erreur : vous n'avez pas choisi votre date, veuillez la choisir.");
-            alert.show();}
+            alert.show();} */
 
         int temp2 = 0;
         int num = 0;
@@ -1317,6 +2358,8 @@ public class SalleAttenteController {
             sd.setTicketName(label);
             temp2 = 1;
             num++;
+
+
         }
         if(a2.isSelected()){
             label += "A2" +", ";

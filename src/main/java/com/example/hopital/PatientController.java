@@ -354,6 +354,7 @@ public class PatientController implements Initializable {
                 // Charger les nouvelles données
                 chargerDonnees();
 
+
             } else {
                 // Affichez un message d'avertissement si aucun élève n'est sélectionné
                 Alert alert = new Alert(Alert.AlertType.WARNING);
