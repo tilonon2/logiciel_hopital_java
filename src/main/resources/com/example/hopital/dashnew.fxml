@@ -84,7 +84,7 @@
                                           <Insets left="14.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <Label prefHeight="222.0" prefWidth="388.0" text="Ici, vous pouvez suivre efficacement le &#10;parcours de chaque patient.&#10;Restez informé et organisé pour offrir les&#10;meilleurs soins possibles à vos patients.">
+                                    <Label prefHeight="222.0" prefWidth="388.0" text="Ici, vous pouvez suivre efficacement le &#10;parcours de chaque patient. Restez &#10;informé et organisé pour offrir les&#10;meilleurs soins possibles à vos patients.">
                                        <font>
                                           <Font size="21.0" />
                                        </font>
@@ -150,23 +150,18 @@
                      </padding>
                   </HBox>
                </children>
-            </VBox>
-            <VBox alignment="TOP_CENTER" prefHeight="1025.0" prefWidth="391.0" spacing="10.0" style="-fx-background-color: #fff;" styleClass="transparent" stylesheets="@../../../../../css/styleDash.css">
                <HBox.margin>
-                  <Insets left="10.0" />
+                  <Insets top="15.0" />
                </HBox.margin>
+            </VBox>
+            <AnchorPane prefHeight="975.0" prefWidth="678.0" style="-fx-background-color: #fff;">
                <children>
-                  <AnchorPane>
-                     <children>
-                        <Pane prefHeight="81.0" prefWidth="391.0" />
-                     </children>
-                  </AnchorPane>
-                  <fx:include fx:id="calendarController" source="calendar.fxml" />
-                  <VBox>
+                  <fx:include fx:id="calendarController" source="calendar.fxml" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="108.0" />
+                  <VBox layoutX="-6.0" layoutY="361.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0">
                      <children>
                         <Label prefHeight="57.0" prefWidth="389.0" text="Evènements" textFill="#2f3192">
                            <font>
-                              <Font size="24.0" />
+                              <Font name="Berlin Sans FB Demi Bold" size="24.0" />
                            </font>
                            <VBox.margin>
                               <Insets top="20.0" />
@@ -180,7 +175,10 @@
                      </children>
                   </VBox>
                </children>
-            </VBox>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </AnchorPane>
          </children>
       </HBox>
    </children>
