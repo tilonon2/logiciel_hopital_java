@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="980.0" prefWidth="1381.0" style="-fx-background-color: white;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.example.hopital.newDashboardController">
+   <children>
+      <BorderPane prefHeight="980.0" prefWidth="1381.0">
+         <left>
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="980.0" prefWidth="299.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" style="-fx-background-color: #fff;">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <children>
+                                    <ImageView fx:id="menu1" fitHeight="64.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/icons8-menu-50.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets bottom="130.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <ImageView fx:id="img_dashboard1" fitHeight="53.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/dash.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <ImageView fx:id="img_user1" fitHeight="52.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/utilisateurs.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="img_attente1" fitHeight="55.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/attente.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="img_consultation1" fitHeight="43.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/consultation.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="img_traitement1" fitHeight="52.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/traitement.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="img_rdv1" fitHeight="52.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/calendrier.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="img_medicament1" fitHeight="52.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/medicament.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="img_patient1" fitHeight="52.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/patientq.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="img_type_user1" fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/type_user.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="img_specialiste1" fitHeight="52.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/specialistes.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Pane prefHeight="51.0" prefWidth="100.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="50.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <AnchorPane fx:id="pane1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <VBox prefHeight="980.0" prefWidth="299.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" style="-fx-background-color: #fff;">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <children>
+                                    <ImageView fx:id="menu" fitHeight="64.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/icons8-menu-50.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets bottom="130.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <ImageView fx:id="img_dashboard" fitHeight="53.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/dash.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <ImageView fx:id="img_user" fitHeight="52.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/utilisateurs.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="img_attente" fitHeight="55.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/attente.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="img_consultation" fitHeight="43.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/consultation.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="img_traitement" fitHeight="52.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/traitement.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="img_rdv" fitHeight="52.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/calendrier.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="img_medicament" fitHeight="52.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/medicament.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="img_patient" fitHeight="52.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/patientq.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="img_type_user" fitHeight="52.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/type_user.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="img_specialiste" fitHeight="52.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/specialistes.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Pane prefHeight="51.0" prefWidth="100.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="50.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox fx:id="pane2" alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" style="-fx-background-color: #ECF3FD;" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/logo_2.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button fx:id="dashboard" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#loadDashboard" prefHeight="51.0" prefWidth="243.0" style="-fx-background-radius: 8;" styleClass="boutonDash" stylesheets="@styleDash.css" text="DASHBOARD">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                    <Button fx:id="utilisateurs" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#loadUtilisateurs" prefHeight="51.0" prefWidth="243.0" style="-fx-background-radius: 8;" styleClass="boutonDash" stylesheets="@styleDash.css" text="UTILISATEURS">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button fx:id="utilisateurs2" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#loadtype_utilisateur" prefHeight="51.0" prefWidth="243.0" style="-fx-background-radius: 8;" styleClass="boutonDash" stylesheets="@styleDash.css" text="TYPES UTILISATEURS">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                    <Button fx:id="utilisateurs12" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#loadSalle_attente" prefHeight="51.0" prefWidth="243.0" style="-fx-background-radius: 8;" styleClass="boutonDash" stylesheets="@styleDash.css" text="SALLE D'ATTENTE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button fx:id="utilisateurs11" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#loadConsultation" prefHeight="51.0" prefWidth="243.0" style="-fx-background-radius: 8;" styleClass="boutonDash" stylesheets="@styleDash.css" text="CONSULTATIONS">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button fx:id="utilisateurs11111" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#loadTraitement" prefHeight="51.0" prefWidth="243.0" style="-fx-background-radius: 8;" styleClass="boutonDash" stylesheets="@styleDash.css" text="TRAITEMENT">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                    <Button fx:id="utilisateurs111111" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#loadRdv" prefHeight="51.0" prefWidth="243.0" style="-fx-background-radius: 8;" styleClass="boutonDash" stylesheets="@styleDash.css" text="RDV">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                    <Button fx:id="utilisateurs111" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#loadMedicament" prefHeight="51.0" prefWidth="243.0" style="-fx-background-radius: 8;" styleClass="boutonDash" stylesheets="@styleDash.css" text="MEDICAMENTS">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                    <Button fx:id="utilisateurs1" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#loadPatient" prefHeight="51.0" prefWidth="243.0" style="-fx-background-radius: 8;" styleClass="boutonDash" stylesheets="@styleDash.css" text="PATIENTS">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                    <Button fx:id="dashboard1" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#loadtype_specialiste" prefHeight="51.0" prefWidth="243.0" style="-fx-background-radius: 8;" styleClass="boutonDash" stylesheets="@styleDash.css" text="SPECIALISTES">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                    <Button fx:id="dashboard11" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#loadDashboard" prefHeight="51.0" prefWidth="243.0" styleClass="boutonDash" stylesheets="@styleDash.css" text="DECONNEXION">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Button>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets bottom="50.0" left="5.0" right="5.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <StackPane fx:id="principale" minHeight="-Infinity" prefHeight="150.0" prefWidth="1082.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

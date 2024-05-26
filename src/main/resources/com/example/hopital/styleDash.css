@@ -101,3 +101,23 @@
     -fx-text-fill: #fff;
 
 }
+
+/* Style Bouton */
+.boutonDash {
+    -fx-background-color: #fff;
+    -fx-text-fill: #000;
+    -fx-border-radius: 8;
+    -fx-border-color: #fff;
+    -fx-border-vidth: 1px;
+    -fx-border-style: transparent;
+
+}
+
+.boutonDash:hover {
+    -fx-text-fill: #fff;
+    -fx-background-color: #2F3192;
+    -fx-border-color: #2F3192;
+    -fx-border-vidth: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 8;
+}
