@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="980.0" prefWidth="1381.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.dashboardController">
+   <children>
+      <BorderPane prefHeight="980.0" prefWidth="1381.0">
+         <left>
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="299.0" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #8E95A5;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="223.0" fitWidth="260.0" layoutX="32.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="20.0">
+                     <image>
+                        <Image url="@../../../images/logo.png" />
+                     </image>
+                  </ImageView>
+                  <VBox layoutX="100.0" layoutY="450.0" prefHeight="736.0" prefWidth="299.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <HBox prefHeight="65.0" prefWidth="299.0">
+                           <children>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <JFXButton fx:id="dashboard" alignment="BASELINE_LEFT" graphicTextGap="50.0" onAction="#loadDashboard" ripplerFill="#1a1fa3" styleClass="boutontest3" stylesheets="@styleDash.css" text="Dashbord" textFill="#8e95a5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <graphic>
+                                          <MaterialIconView fx:id="img_dashboard" fill="#8e95a5" glyphName="DASHBOARD" size="44" wrappingWidth="14.969772338867188" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="65.0" prefWidth="299.0">
+                           <children>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <JFXButton fx:id="utilisateurs" alignment="BASELINE_LEFT" graphicTextGap="50.0" onAction="#loadUtilisateurs" ripplerFill="#1a1fa3" styleClass="boutontest3" stylesheets="@styleDash.css" text="Utilisateurs" textFill="#8e95a5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <graphic>
+                                          <MaterialIconView fx:id="img_user" fill="#8e95a5" glyphName="SUPERVISOR_ACCOUNT" size="44" wrappingWidth="14.969772338867188" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="65.0" prefWidth="299.0">
+                           <children>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <JFXButton fx:id="utilisateurs2" alignment="BASELINE_LEFT" graphicTextGap="50.0" onAction="#loadtype_utilisateur" ripplerFill="#1a1fa3" styleClass="boutontest3" stylesheets="@styleDash.css" text="Types Utilisateurs" textFill="#8e95a5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <graphic>
+                                          <MaterialIconView fx:id="img_type_user" fill="#8e95a5" glyphName="VERIFIED_USER" size="44" wrappingWidth="14.969772338867188" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="25.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="65.0" prefWidth="299.0">
+                           <children>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <JFXButton fx:id="utilisateurs12" alignment="BASELINE_LEFT" graphicTextGap="50.0" onAction="#loadSalle_attente" ripplerFill="#1a1fa3" styleClass="boutontest3" stylesheets="@styleDash.css" text="Salle Attente" textFill="#8e95a5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <graphic>
+                                          <MaterialIconView fx:id="img_attente" fill="#8e95a5" glyphName="EVENT_SEAT" size="44" wrappingWidth="14.969772338867188" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="65.0" prefWidth="299.0">
+                           <children>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <JFXButton fx:id="utilisateurs11" alignment="BASELINE_LEFT" graphicTextGap="50.0" onAction="#loadConsultation" ripplerFill="#1a1fa3" styleClass="boutontest3" stylesheets="@styleDash.css" text="Consultations" textFill="#8e95a5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <graphic>
+                                          <MaterialIconView fx:id="img_consultation" fill="#8e95a5" glyphName="AIRLINE_SEAT_INDIVIDUAL_SUITE" size="44" wrappingWidth="14.969772338867188" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="65.0" prefWidth="299.0">
+                           <children>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <JFXButton fx:id="utilisateurs11111" alignment="BASELINE_LEFT" graphicTextGap="50.0" onAction="#loadTraitement" ripplerFill="#1a1fa3" styleClass="boutontest3" stylesheets="@styleDash.css" text="Traitement" textFill="#8e95a5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <graphic>
+                                          <MaterialIconView fx:id="img_traitement" fill="#8e95a5" glyphName="CREATE_NEW_FOLDER" size="44" wrappingWidth="14.969772338867188" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="65.0" prefWidth="299.0">
+                           <children>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <JFXButton fx:id="utilisateurs111111" alignment="BASELINE_LEFT" graphicTextGap="50.0" onAction="#loadRdv" ripplerFill="#1a1fa3" styleClass="boutontest3" stylesheets="@styleDash.css" text="RDV" textFill="#8e95a5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <graphic>
+                                          <MaterialIconView fx:id="img_rdv" fill="#8e95a5" glyphName="EVENT" size="44" wrappingWidth="14.969772338867188" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="65.0" prefWidth="299.0">
+                           <children>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <JFXButton fx:id="utilisateurs1" alignment="BASELINE_LEFT" graphicTextGap="50.0" onAction="#loadPatient" ripplerFill="#1a1fa3" styleClass="boutontest3" stylesheets="@styleDash.css" text="Patients" textFill="#8e95a5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <graphic>
+                                          <MaterialIconView fx:id="img_patient" fill="#8e95a5" glyphName="FACE" size="44" wrappingWidth="14.969772338867188" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="65.0" prefWidth="299.0">
+                           <children>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <JFXButton fx:id="dashboard1" alignment="BASELINE_LEFT" graphicTextGap="50.0" onAction="#loadtype_specialiste" ripplerFill="#1a1fa3" styleClass="boutontest3" stylesheets="@styleDash.css" text="Specialistes" textFill="#8e95a5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <graphic>
+                                          <MaterialIconView fx:id="img_specialiste" fill="#8e95a5" glyphName="DONE_ALL" size="44" wrappingWidth="14.969772338867188" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="65.0" prefWidth="299.0">
+                           <children>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <JFXButton fx:id="dashboard11" alignment="BASELINE_LEFT" graphicTextGap="50.0" ripplerFill="#1a1fa3" styleClass="boutontest3" stylesheets="@styleDash.css" text="Deconnexion" textFill="#8e95a5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <graphic>
+                                          <MaterialIconView fx:id="MaterielChange11111" fill="#8e95a5" glyphName="EXIT_TO_APP" size="44" wrappingWidth="14.969772338867188" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <StackPane fx:id="principale" minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="1082.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

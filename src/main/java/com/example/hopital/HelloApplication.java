@@ -22,7 +22,7 @@ public class HelloApplication extends Application {
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("connexion_new.fxml"));
         //Scene scene = new Scene(fxmlLoader.load(), 1381, 980);
 
-        Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("dashboard_new.fxml"));
         Scene scene = new Scene(root);
 
         // Charger le fichier CSS

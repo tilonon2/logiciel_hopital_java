@@ -154,7 +154,7 @@
                   <Insets top="15.0" />
                </HBox.margin>
             </VBox>
-            <AnchorPane prefHeight="975.0" prefWidth="678.0" style="-fx-background-color: #fff;">
+            <AnchorPane minHeight="-Infinity" prefHeight="980.0" prefWidth="678.0" style="-fx-background-color: #fff;">
                <children>
                   <fx:include fx:id="calendarController" source="calendar.fxml" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="108.0" />
                   <VBox layoutX="-6.0" layoutY="361.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0">

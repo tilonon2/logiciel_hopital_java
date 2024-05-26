@@ -1,5 +1,7 @@
 package com.example.hopital;
 
+import com.jfoenix.controls.JFXButton;
+import de.jensd.fx.glyphs.materialicons.MaterialIconView;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -40,45 +42,72 @@ public class dashboardController {
     @FXML
     private ImageView img_user;
 
-
-
-
-    @FXML
-    private Button dashboard;
+    // @FXML
+    // private Button dashboard;
 
     @FXML
     private StackPane principale;
 
-    @FXML
-    private Button utilisateurs;
+    // @FXML
+    // private Button utilisateurs;
 
 
+    // @FXML
+    // private Button dashboard1;
+
+    // @FXML
+    // private Button dashboard11;
+
+    // @FXML
+    // private Button utilisateurs1;
+
+    // @FXML
+    // private Button utilisateurs11;
+
+    // @FXML
+    // private Button utilisateurs111;
+
+    // @FXML
+    // private Button utilisateurs11111;
+
+    // @FXML
+    // private Button utilisateurs111111;
+
+    // @FXML
+    // private Button utilisateurs12;
+
+    // @FXML
+    // private Button utilisateurs2;
+   
     @FXML
-    private Button dashboard1;
+    private JFXButton dashboard;
 
     @FXML
-    private Button dashboard11;
+    private JFXButton dashboard1;
 
     @FXML
-    private Button utilisateurs1;
+    private JFXButton dashboard11;
 
     @FXML
-    private Button utilisateurs11;
+    private JFXButton utilisateurs;
 
     @FXML
-    private Button utilisateurs111;
+    private JFXButton utilisateurs1;
 
     @FXML
-    private Button utilisateurs11111;
+    private JFXButton utilisateurs11;
 
     @FXML
-    private Button utilisateurs111111;
+    private JFXButton utilisateurs11111;
 
     @FXML
-    private Button utilisateurs12;
+    private JFXButton utilisateurs111111;
 
     @FXML
-    private Button utilisateurs2;
+    private JFXButton utilisateurs12;
+
+    @FXML
+    private JFXButton utilisateurs2;
 
     // Méthode pour charger la vue dashboard
     @FXML
@@ -163,9 +192,9 @@ public class dashboardController {
         img_consultation.setVisible(accessConsultation);
 
         // Pour les médicaments
-        boolean accessMedicament = userType.isAccesMedicament();
-        utilisateurs111.setVisible(accessMedicament);
-        img_medicament.setVisible(accessMedicament);
+        // boolean accessMedicament = userType.isAccesMedicament();
+        // utilisateurs111.setVisible(accessMedicament);
+        // img_medicament.setVisible(accessMedicament);
 
         // Pour les patients
         boolean accessPatient = userType.isAccesPatient();
