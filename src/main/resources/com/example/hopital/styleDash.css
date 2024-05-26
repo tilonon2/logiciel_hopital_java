@@ -28,7 +28,7 @@
     -fx-text-fill: #a3a3a3;
 }
 
-.survole-color-text :hover {
+.survole-color-text:hover {
     -fx-text-fill: #2F3192;
 }
 
@@ -101,7 +101,10 @@
     -fx-text-fill: #fff;
 
 }
+.other_input {
+    -fx-text-fill: #1B0A4B;
 
+}
 /* Style Bouton */
 .boutonDash {
     -fx-background-color: #fff;
