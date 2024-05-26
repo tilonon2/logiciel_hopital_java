@@ -12,12 +12,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1035.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="784.0" fitWidth="1045.0" layoutX="41.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-64.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../../../images/background/design/557d0afeb6372746656c8f48b90c4dcd.png" />
+            <Image url="@../../../images/background/design/image_processing20210624-16064-1yl7s3u.jpg" />
          </image>
       </ImageView>
       <HBox layoutX="117.0" layoutY="85.0" prefHeight="507.0" prefWidth="803.0" style="-fx-background-color: #fff; -fx-background-radius: 30;" AnchorPane.topAnchor="109.0">
@@ -232,7 +231,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label prefHeight="65.0" prefWidth="333.0" text="Cherchez Vous Un &#10;Patient Déja Enregistré ??" textFill="#5657d5">
+                  <Label prefHeight="77.0" prefWidth="333.0" text="Cherchez Vous Un &#10;Patient Déja Enregistré ??" textFill="#5657d5">
                      <font>
                         <Font name="Berlin Sans FB Demi Bold" size="26.0" />
                      </font>
@@ -262,7 +261,7 @@
                         </Label>
                         <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../images/constante/icons8-tri-décroissant-30%20(3).png" />
+                              <Image url="@../../../images/constante/tri-décroissant.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -315,10 +314,5 @@
             <Image url="@../../../images/background/back/imageedit_19_9280529158.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnback" layoutX="789.0" layoutY="643.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="101.0" style="-fx-background-radius: 30;" styleClass="boutonEnregistrement" stylesheets="@styleDash.css" text="Back">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>

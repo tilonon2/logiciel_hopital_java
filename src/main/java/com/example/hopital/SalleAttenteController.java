@@ -216,7 +216,7 @@ public class SalleAttenteController {
                 if (newWindow == 1) {
                     try {
                         // Charger le fichier FXML
-                        Parent payee_details_parent = FXMLLoader.load(getClass().getResource("constante.fxml"));
+                        Parent payee_details_parent = FXMLLoader.load(getClass().getResource("constante_constante.fxml"));
                         
                         // Créer une nouvelle scène avec le parent chargé
                         Scene payee_details_scene = new Scene(payee_details_parent);
