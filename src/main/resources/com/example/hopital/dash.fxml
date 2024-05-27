@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -132,11 +136,30 @@
                      <children>
                         <VBox prefHeight="397.0" prefWidth="377.0" spacing="5.0">
                            <children>
-                              <VBox prefHeight="200.0" prefWidth="100.0" />
+                              <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-radius: 30;">
+                                 <children>
+                                    <Label prefHeight="34.0" prefWidth="164.0" text="Work Time">
+                                       <font>
+                                          <Font size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <LineChart fx:id="lineChart" legendVisible="false" stylesheets="@styleDash.css">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </LineChart>
+                                 </children></VBox>
                               <HBox prefHeight="205.0" prefWidth="335.0">
                                  <children>
-                                    <VBox prefHeight="201.0" prefWidth="190.0" />
-                                    <Pane prefHeight="200.0" prefWidth="200.0" />
+                                    <Label prefHeight="189.0" prefWidth="362.0" text="Work Time">
+                                       <font>
+                                          <Font size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <PieChart fx:id="pieChart" legendVisible="false" stylesheets="@styleDash.css" />
                                  </children>
                               </HBox>
                            </children>

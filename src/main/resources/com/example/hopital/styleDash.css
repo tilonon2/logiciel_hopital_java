@@ -192,3 +192,26 @@
 .boutontest3:hover #img_dashboard {
     -fx-fill: #2F3192;
 }
+
+.axis{
+    -fx-fill: #fff;
+    -fx-stroke: #fff;
+    -fx-font-size : 24;
+    -fx-tick-labels-fill : #fff;
+}
+.default-color0.chart-pie{-fx-pie-color: transparent;}
+.default-color1.chart-pie{-fx-pie-color: transparent;}
+.default-color2.chart-pie{-fx-pie-color: transparent;}
+.default-color3.chart-pie{-fx-pie-color: transparent;}
+.default-color4.chart-pie{-fx-pie-color: transparent;}
+
+.chart-pie-label{
+    -fx-fill: #2F3192;
+    -fx-stroke: #2F3192;
+    -fx-font-size : 15;
+}
+
+.chart-pie-label-line{
+    -fx-stroke: #2F3192;
+    -fx-fill: #2F3192;
+}
