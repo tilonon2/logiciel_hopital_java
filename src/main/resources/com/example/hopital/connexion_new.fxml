@@ -62,6 +62,11 @@
             <Circle fill="#71cebf" layoutX="203.0" layoutY="795.0" radius="23.0" stroke="#71cebf" strokeType="INSIDE" />
             <Pane layoutX="28.0" layoutY="956.0" prefHeight="15.0" prefWidth="210.0" style="-fx-background-color: #71cebf;" />
             <Circle fill="#71cebf" layoutX="46.0" layoutY="943.0" radius="23.0" stroke="#71cebf" strokeType="INSIDE" />
+            <Label layoutX="11.0" layoutY="2.0" prefHeight="190.0" prefWidth="478.0" text="UN MEDECIN DEVOUE&#10;VOUS POUVEZ CROIRE " textFill="WHITE">
+               <font>
+                  <Font name="Jokerman" size="36.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <VBox alignment="TOP_CENTER" prefHeight="980.0" prefWidth="687.0" style="-fx-background-radius: 40; -fx-background-color: #fff;">
@@ -80,12 +85,12 @@
                   </Label>
                   <VBox layoutX="80.0" layoutY="427.0" prefHeight="140.0" prefWidth="344.0">
                      <children>
-                        <TextField prefHeight="57.0" fx:id="pseudo" prefWidth="344.0" promptText="Nom Utilisateur" style="-fx-background-radius: 15;">
+                        <TextField fx:id="pseudo" prefHeight="57.0" prefWidth="344.0" promptText="Nom Utilisateur" style="-fx-background-radius: 15;">
                            <font>
                               <Font name="Bell MT Bold" size="24.0" />
                            </font>
                         </TextField>
-                        <TextField prefHeight="58.0" fx:id="mdp" prefWidth="344.0" promptText="Votre mots de passe" style="-fx-background-radius: 15;">
+                        <TextField fx:id="mdp" prefHeight="58.0" prefWidth="344.0" promptText="Votre mots de passe" style="-fx-background-radius: 15;">
                            <font>
                               <Font name="Bell MT Bold" size="24.0" />
                            </font>
@@ -110,7 +115,7 @@
                         <Font name="Cooper Black" size="20.0" />
                      </font>
                   </Label>
-                  <Button layoutX="84.0" layoutY="585.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="346.0" style="-fx-background-radius: 20;" styleClass="boutonConnexion" stylesheets="@../../../../../css/styleDash.css" text="Connexion" textFill="WHITE" onAction="#handleLoginButtonAction">
+                  <Button layoutX="84.0" layoutY="585.0" mnemonicParsing="false" onAction="#handleLoginButtonAction" prefHeight="61.0" prefWidth="346.0" style="-fx-background-radius: 20;" styleClass="boutonConnexion" stylesheets="@../../../../../css/styleDash.css" text="Connexion" textFill="WHITE">
                      <font>
                         <Font name="Cooper Black" size="32.0" />
                      </font>

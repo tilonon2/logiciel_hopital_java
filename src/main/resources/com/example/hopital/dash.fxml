@@ -4,7 +4,6 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -134,16 +133,16 @@
                   </ScrollPane>
                   <HBox prefHeight="397.0" prefWidth="731.0" styleClass="transparent" stylesheets="@../../../../../css/styleDash.css">
                      <children>
-                        <VBox prefHeight="397.0" prefWidth="377.0" spacing="5.0">
+                        <VBox prefHeight="397.0" prefWidth="377.0" spacing="5.0" HBox.hgrow="ALWAYS">
                            <children>
                               <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-radius: 30;">
                                  <children>
-                                    <Label prefHeight="34.0" prefWidth="164.0" text="Work Time">
+                                    <Label prefHeight="31.0" prefWidth="307.0" text="Totals Patients Pris En Charge">
                                        <font>
                                           <Font size="21.0" />
                                        </font>
                                     </Label>
-                                    <LineChart fx:id="lineChart" legendVisible="false" stylesheets="@styleDash.css">
+                                    <LineChart fx:id="lineChart" legendVisible="false" styleClass="axis" stylesheets="@styleDash.css">
                                       <xAxis>
                                         <CategoryAxis side="BOTTOM" />
                                       </xAxis>
@@ -152,21 +151,17 @@
                                       </yAxis>
                                     </LineChart>
                                  </children></VBox>
-                              <HBox prefHeight="205.0" prefWidth="335.0">
-                                 <children>
-                                    <Label prefHeight="189.0" prefWidth="362.0" text="Work Time">
-                                       <font>
-                                          <Font size="21.0" />
-                                       </font>
-                                    </Label>
-                                    <PieChart fx:id="pieChart" legendVisible="false" stylesheets="@styleDash.css" />
-                                 </children>
-                              </HBox>
+                              <HBox prefHeight="205.0" prefWidth="335.0" />
                            </children>
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
                         </VBox>
+                        <AnchorPane prefHeight="377.0" prefWidth="294.0" style="-fx-background-color: #2f3192; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <ImageView fitHeight="221.0" fitWidth="230.0" layoutX="62.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+                           </children>
+                        </AnchorPane>
                      </children>
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -174,7 +169,7 @@
                   </HBox>
                </children>
             </VBox>
-            <VBox alignment="TOP_CENTER" prefHeight="1025.0" prefWidth="391.0" spacing="10.0" style="-fx-background-color: #fff;" styleClass="transparent" stylesheets="@../../../../../css/styleDash.css">
+            <VBox alignment="TOP_CENTER" prefHeight="1025.0" prefWidth="391.0" spacing="10.0" style="-fx-background-color: #ECF3FD;" styleClass="transparent" stylesheets="@../../../../../css/styleDash.css">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>
@@ -184,8 +179,8 @@
                         <Pane prefHeight="81.0" prefWidth="391.0" />
                      </children>
                   </AnchorPane>
-                  <fx:include fx:id="calendarController" source="calendar.fxml" />
-                  <VBox>
+                  <fx:include fx:id="calendarController2" source="calendar2.fxml" />
+                  <VBox style="-fx-background-color: #fff; -fx-background-radius: 19;">
                      <children>
                         <Label prefHeight="57.0" prefWidth="389.0" text="Evènements" textFill="#2f3192">
                            <font>

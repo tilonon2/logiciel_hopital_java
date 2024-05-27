@@ -9,6 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import model.Book;
@@ -19,7 +20,7 @@ import java.sql.*;
 import java.time.ZonedDateTime;
 import java.util.*;
 
-public class CalendarController implements Initializable {
+public class CalendarController2 implements Initializable {
 
     ZonedDateTime dateFocus;
     ZonedDateTime today;
@@ -98,18 +99,27 @@ public class CalendarController implements Initializable {
                         Text date = new Text(String.valueOf(currentDate));
                         double textTranslationY = -(rectangleHeight / 2) * 0.2;
                         date.setTranslateY(textTranslationY);
-                        date.setFill(Color.WHITE);
+                        date.setFill(Color.web("#2F3192"));
                         date.setStyle("-fx-font-weight: bold;");
+
+                        // Vérifiez si c'est la date actuelle pour entourer avec un cercle violet
+                        if (today.getYear() == dateFocus.getYear() && today.getMonth() == dateFocus.getMonth() && today.getDayOfMonth() == currentDate) {
+                            Circle circle = new Circle(rectangleWidth / 2);
+                            circle.setFill(Color.TRANSPARENT);
+                            circle.setStroke(Color.web("#2F3192"));
+                            circle.setStrokeWidth(2);
+                            stackPane.getChildren().add(circle);
+                        }
 
                         stackPane.getChildren().add(date);
 
+                        // Vérifiez s'il y a des activités pour cette date pour ajouter un point rouge
                         List<CalendarActivity> calendarActivities = calendarActivityMap.get(currentDate);
-                        if (calendarActivities != null) {
-                            // createCalendarActivity(calendarActivities, rectangleHeight, rectangleWidth, stackPane);
+                        if (calendarActivities != null && !calendarActivities.isEmpty()) {
+                            Circle eventIndicator = new Circle(3, Color.RED);
+                            eventIndicator.setTranslateY(rectangleHeight / 2 - 5);
+                            stackPane.getChildren().add(eventIndicator);
                         }
-                    }
-                    if (today.getYear() == dateFocus.getYear() && today.getMonth() == dateFocus.getMonth() && today.getDayOfMonth() == currentDate) {
-                        rectangle.setStroke(Color.BLACK);
                     }
                 }
                 calendar.getChildren().add(stackPane);
@@ -154,9 +164,10 @@ public class CalendarController implements Initializable {
                 e.printStackTrace();
             }
         } else {
-        System.err.println("bookContainer est null !");
+            System.err.println("bookContainer est null !");
         }
     }
+
     private Map<Integer, List<CalendarActivity>> getCalendarActivitiesMonth(ZonedDateTime dateFocus) {
         Map<Integer, List<CalendarActivity>> calendarActivityMap = new HashMap<>();
 
@@ -180,5 +191,4 @@ public class CalendarController implements Initializable {
 
         return calendarActivityMap;
     }
-
 }

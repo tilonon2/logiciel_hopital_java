@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -69,7 +72,7 @@
                                  <children>
                                     <HBox prefHeight="72.0" prefWidth="386.0">
                                        <children>
-                                          <Label prefHeight="97.0" prefWidth="220.0" text="Bienvenue," textFill="#2f3192">
+                                          <Label prefHeight="35.0" prefWidth="308.0" text="Bienvenue," textFill="#2f3192">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
@@ -130,13 +133,28 @@
                   </ScrollPane>
                   <HBox prefHeight="397.0" prefWidth="731.0" styleClass="transparent" stylesheets="@../../../../../css/styleDash.css">
                      <children>
-                        <VBox prefHeight="397.0" prefWidth="377.0" spacing="5.0">
+                        <VBox prefHeight="397.0" prefWidth="377.0" spacing="5.0" HBox.hgrow="ALWAYS">
                            <children>
-                              <VBox prefHeight="200.0" prefWidth="100.0" />
+                              <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-radius: 30;">
+                                 <children>
+                                    <Label prefHeight="31.0" prefWidth="307.0" text="Totals Patients Pris En Charge">
+                                       <font>
+                                          <Font size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <LineChart fx:id="lineChart" legendVisible="false" styleClass="axis" stylesheets="@styleDash.css">
+                                       <xAxis>
+                                          <CategoryAxis side="BOTTOM" />
+                                       </xAxis>
+                                       <yAxis>
+                                          <NumberAxis side="LEFT" />
+                                       </yAxis>
+                                    </LineChart>
+                                 </children>
+                              </VBox>
                               <HBox prefHeight="205.0" prefWidth="335.0">
                                  <children>
-                                    <VBox prefHeight="201.0" prefWidth="190.0" />
-                                    <Pane prefHeight="200.0" prefWidth="200.0" />
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                                  </children>
                               </HBox>
                            </children>
@@ -144,6 +162,25 @@
                               <Insets />
                            </HBox.margin>
                         </VBox>
+                        <AnchorPane prefHeight="377.0" prefWidth="294.0" style="-fx-background-color: #2f3192; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <ImageView fitHeight="377.0" fitWidth="292.0" layoutX="49.333333333333336" layoutY="42.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="49.0" AnchorPane.rightAnchor="-41.0">
+                                 <image>
+                                    <Image url="@../../../images/other/new/4be0b39651583fb2a155565d84cea6e3.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="285.0" fitWidth="226.0" layoutX="-76.66666666666667" layoutY="98.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="-114.0">
+                                 <image>
+                                    <Image url="@../../../images/other/new/new/imageedit_22_4968226207.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="3.0" layoutY="-5.0" prefHeight="140.0" prefWidth="300.0" text="Notre devouement est&#10;motivé par la profonde &#10;conviction que chaque patient&#10;mérite des soins de qualité." textFill="WHITE">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
                      </children>
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -172,6 +209,30 @@
                               <VBox fx:id="bookContainer" prefHeight="828.0" prefWidth="372.0" spacing="10.0" style="-fx-background-color: #fff;" styleClass="transparent" stylesheets="@../../../../../css/styleDash.css" />
                            </content>
                         </ScrollPane>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="85.0" fitWidth="96.0" layoutX="283.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/background/user/c58d564df7784fd9a128c7a66a8d58ee.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="40.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/constante/tri-décroissant.png" />
+                     </image>
+                  </ImageView>
+                  <VBox layoutX="98.0" layoutY="21.0" prefHeight="69.0" prefWidth="177.0">
+                     <children>
+                        <Label alignment="BASELINE_RIGHT" prefHeight="41.0" prefWidth="175.0" text="FOFANA">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="BASELINE_RIGHT" prefHeight="41.0" prefWidth="175.0" text="Sandra Yasmine">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
                      </children>
                   </VBox>
                </children>

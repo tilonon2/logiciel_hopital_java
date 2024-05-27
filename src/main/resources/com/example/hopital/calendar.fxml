@@ -24,7 +24,7 @@
                   <Font name="Baloo 2 SemiBold" size="19.0" />
                </font>
             </Text>
-            <Button mnemonicParsing="false" onAction="#forwardOneMonth" opacity="0.45" text="&gt;" textFill="#73d722" />
+            <Button mnemonicParsing="false" onAction="#forwardOneMonth" opacity="0.45" text="&gt;" />
          </children>
          <padding>
             <Insets top="5.0" />

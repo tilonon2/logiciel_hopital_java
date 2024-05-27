@@ -28,12 +28,9 @@ public class dashController implements Initializable {
     private List<Book> booksVertical;
     @FXML
     private LineChart<?, ?> lineChart;
-    @FXML
-    private PieChart pieChart;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         iniLineChart();
-        iniPieChart();
 
         recentlyAdded = new ArrayList<>(recentlyAdded());
         booksVertical = new ArrayList<>(booksVertical());
@@ -62,25 +59,15 @@ public class dashController implements Initializable {
         }
     }
 
-    private void iniPieChart() {
-        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-        new PieChart.Data("Android", 15),
-        new PieChart.Data("JavaFx", 30),
-        new PieChart.Data("Java Swing", 10),
-        new PieChart.Data("C", 3),
-        new PieChart.Data("React Native", 2));
-        pieChart.setData(pieChartData);
-    }
-
     private void iniLineChart() {
         XYChart.Series series = new XYChart.Series();
-        series.getData().add(new XYChart.Data( "Monday", 8));
-        series.getData().add(new XYChart.Data( "Tuesday", 12));
-        series.getData().add(new XYChart.Data( "Wednesday", 10));
-        series.getData().add(new XYChart.Data( "Thursday", 15));
-        series.getData().add(new XYChart.Data( "Friday", 12));
-        series.getData().add(new XYChart.Data( "Saturday", 8));
-        series.getData().add(new XYChart.Data( "Sunday", 5));
+        series.getData().add(new XYChart.Data( "Konaté Tilonon", 8));
+        series.getData().add(new XYChart.Data( "Diakité Sekou", 12));
+        series.getData().add(new XYChart.Data( "Radji Sad", 10));
+        series.getData().add(new XYChart.Data( "Yeo François", 15));
+        series.getData().add(new XYChart.Data( "Dr Javad", 12));
+        series.getData().add(new XYChart.Data( "Dr Desiré", 8));
+        series.getData().add(new XYChart.Data( "Dr Fofana", 5));
         lineChart.getData().addAll(series);
         lineChart.lookup(".chart-plot-background").setStyle("fx-background-color: transparent;");
         series.getNode().setStyle("fx-stroke: #2F3192");

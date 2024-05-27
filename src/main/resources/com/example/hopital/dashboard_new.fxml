@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -223,6 +224,18 @@
                               </AnchorPane>
                            </children>
                         </HBox>
+                        <AnchorPane prefHeight="163.0" prefWidth="298.0" style="-fx-background-color: #71CEBF; -fx-background-radius: 30;">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="114.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/illustration/90908508-2775-464d-9b17-503881cea430.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="20.0" />
+                           </VBox.margin>
+                        </AnchorPane>
                      </children>
                   </VBox>
                </children>
