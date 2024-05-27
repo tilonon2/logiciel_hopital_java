@@ -1,6 +1,6 @@
 -----------------Reception Details----------------
-Motif : Ecographie
+Motif : Autre examen!
 Date : null
 Nombre de Sièges: 1
-Siège(s) reservé(s): A1
+Siège(s) reservé(s): A2
 -----------------Reception Details----------------

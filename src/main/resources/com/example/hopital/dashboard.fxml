@@ -101,7 +101,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="utilisateurs111111" alignment="CENTER_RIGHT" layoutX="28.0" layoutY="615.0" mnemonicParsing="false" onAction="#loadRdv" prefHeight="51.0" prefWidth="243.0" text="RDV">
+                        <Button fx:id="utilisateurs111111" alignment="CENTER_RIGHT" layoutX="28.0" layoutY="615.0" mnemonicParsing="false" onAction="#loadRdv" prefHeight="51.0" prefWidth="243.0" text="EXAMEN SUP">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -150,7 +150,7 @@
                         </ImageView>
                         <ImageView fx:id="img_rdv" fitHeight="52.0" fitWidth="80.0" layoutX="35.0" layoutY="615.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../images/calendrier.png" />
+                              <Image url="@../../../images/consultation.png" />
                            </image>
                         </ImageView>
                         <ImageView fx:id="img_medicament" fitHeight="52.0" fitWidth="80.0" layoutX="39.0" layoutY="690.0" pickOnBounds="true" preserveRatio="true">

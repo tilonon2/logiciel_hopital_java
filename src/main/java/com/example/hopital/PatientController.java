@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 import org.w3c.dom.Document;
 
 import java.io.FileOutputStream;
@@ -15,6 +17,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -367,6 +370,124 @@ public class PatientController implements Initializable {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+
+
+
+    @FXML
+    private void handleShowCarnet(ActionEvent event) {
+        Patient selectedPatient = table_patient.getSelectionModel().getSelectedItem();
+        if (selectedPatient == null) {
+            showAlert("Erreur", "Veuillez sélectionner un patient.");
+            return;
+        }
+
+        int patientId = selectedPatient.getId();
+        StringBuilder carnetContent = new StringBuilder();
+
+        // Récupérer les consultations du patient
+        String consultationQuery = "SELECT * FROM consultation WHERE id_patient = ?";
+        try (Connection conn = dbManager.getConnection();
+             PreparedStatement pst = conn.prepareStatement(consultationQuery)) {
+            pst.setInt(1, patientId);
+
+            try (ResultSet rs = pst.executeQuery()) {
+                carnetContent.append("Consultations:\n");
+                while (rs.next()) {
+                    int id = rs.getInt("id");
+                    String antecedent = rs.getString("antecedent");
+                    String diagnostic = rs.getString("diagnostic");
+                    String prescription = rs.getString("prescription");
+                    String observation = rs.getString("observation");
+                    String acteMedicale = rs.getString("acte_medicale");
+                    Date rdv = rs.getDate("rdv");
+
+                    carnetContent.append("ID: ").append(id).append("\n")
+                            .append("Antécédent: ").append(antecedent).append("\n")
+                            .append("Diagnostic: ").append(diagnostic).append("\n")
+                            .append("Prescription: ").append(prescription).append("\n")
+                            .append("Observation: ").append(observation).append("\n")
+                            .append("Acte Médicale: ").append(acteMedicale).append("\n")
+                            .append("RDV: ").append(rdv).append("\n\n");
+
+                    // Récupérer les examens supplémentaires pour chaque consultation
+                    String examenQuery = "SELECT * FROM examen_sup WHERE id_consultation = ?";
+                    try (PreparedStatement pstExamen = conn.prepareStatement(examenQuery)) {
+                        pstExamen.setInt(1, id);
+
+                        try (ResultSet rsExamen = pstExamen.executeQuery()) {
+                            carnetContent.append("Examens Supplémentaires:\n");
+                            while (rsExamen.next()) {
+                                String typeExamen = rsExamen.getString("type_examen");
+                                String objectif = rsExamen.getString("objectif");
+                                String resultat = rsExamen.getString("resultat");
+                                String diagnosticExamen = rsExamen.getString("diagnostic");
+                                Date dateExamen = rsExamen.getDate("date_examen");
+                                Date rdvExamen = rsExamen.getDate("rdv");
+
+                                // Vérifiez les valeurs nulles et utilisez des valeurs par défaut si nécessaire
+                                carnetContent.append("Type d'Examen: ").append(typeExamen).append("\n")
+                                        .append("Objectif: ").append(objectif).append("\n")
+                                        .append("Résultat: ").append(resultat).append("\n")
+                                        .append("Diagnostic: ").append(diagnosticExamen).append("\n")
+                                        .append("Date Examen: ").append(dateExamen != null ? dateExamen.toString() : "N/A").append("\n")
+                                        .append("RDV Examen: ").append(rdvExamen != null ? rdvExamen.toString() : "N/A").append("\n\n");
+                            }
+                        } catch (SQLException ex) {
+                            Logger.getLogger(PatientController.class.getName()).log(Level.SEVERE, "Erreur lors de la récupération des examens supplémentaires.", ex);
+                            showAlert("Erreur", "Erreur lors de la récupération des examens supplémentaires.");
+                            return;
+                        }
+                    }
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(PatientController.class.getName()).log(Level.SEVERE, "Erreur lors de la récupération des consultations.", ex);
+                showAlert("Erreur", "Erreur lors de la récupération des consultations.");
+                return;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PatientController.class.getName()).log(Level.SEVERE, "Erreur lors de la récupération des données.", ex);
+            showAlert("Erreur", "Erreur lors de la récupération des données.");
+            return;
+        }
+
+        // Afficher le contenu du carnet dans un popup
+        showCarnetPopup(carnetContent.toString());
+    }
+
+    private void showCarnetPopup(String content) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Carnet du Patient");
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+
+        // Utiliser un TextArea pour afficher le contenu avec un défilement
+        TextArea textArea = new TextArea(content);
+        textArea.setWrapText(true);
+        textArea.setEditable(false);
+        textArea.setMaxWidth(Double.MAX_VALUE);
+        textArea.setMaxHeight(Double.MAX_VALUE);
+        GridPane.setVgrow(textArea, Priority.ALWAYS);
+        GridPane.setHgrow(textArea, Priority.ALWAYS);
+
+        GridPane contentPane = new GridPane();
+        contentPane.setMaxWidth(Double.MAX_VALUE);
+        contentPane.add(textArea, 0, 0);
+
+        alert.getDialogPane().setContent(contentPane);
+        alert.showAndWait();
+    }
+
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+
+
+
 
 
     @Override

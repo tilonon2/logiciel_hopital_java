@@ -123,7 +123,7 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="carnet_patient" layoutX="8.0" layoutY="598.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="133.0" text="CARNET">
+      <Button fx:id="carnet_patient" layoutX="8.0" layoutY="598.0" mnemonicParsing="false" onAction="#handleShowCarnet" prefHeight="64.0" prefWidth="133.0" text="CARNET">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>

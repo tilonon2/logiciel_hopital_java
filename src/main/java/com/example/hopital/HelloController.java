@@ -73,12 +73,15 @@ public class HelloController implements Initializable {
         String username = pseudo.getText();
         String password = mdp.getText();
         if (authenticate(username, password)) {
-            int id_recup = retourne_id(username, password);
-            TypeUtilisateur userType = getTypeUtilisateurById(id_recup);
-            loadDashboard(userType);
+            int userId = retourne_id(username, password);
+            TypeUtilisateur userType = getTypeUtilisateurById(userId);
 
+            // Stocker l'ID de l'utilisateur dans la session
+            Session.getInstance().setUserId(userId);
+            Session.getInstance().setUsername(username);
+
+            loadDashboard(userType);
         } else {
-            // Gérer l'échec de connexion
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Erreur sur les identifiants");
             alert.setHeaderText(null);
@@ -127,7 +130,7 @@ public class HelloController implements Initializable {
 
     private void loadDashboard(TypeUtilisateur userType) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/hopital/dashboard.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/hopital/dashboard_new.fxml"));
             Parent root = loader.load();
 
             dashboardController controller = loader.getController();

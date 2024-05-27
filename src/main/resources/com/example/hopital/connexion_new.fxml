@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="1381.0" style="-fx-background-radius: 40; -fx-background-color: #71CEBF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="1381.0" style="-fx-background-radius: 40; -fx-background-color: #71CEBF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.HelloController">
    <children>
       <AnchorPane prefHeight="980.0" prefWidth="642.0" HBox.hgrow="ALWAYS">
          <children>
@@ -80,12 +80,12 @@
                   </Label>
                   <VBox layoutX="80.0" layoutY="427.0" prefHeight="140.0" prefWidth="344.0">
                      <children>
-                        <TextField prefHeight="57.0" prefWidth="344.0" promptText="Nom Utilisateur" style="-fx-background-radius: 15;">
+                        <TextField prefHeight="57.0" fx:id="pseudo" prefWidth="344.0" promptText="Nom Utilisateur" style="-fx-background-radius: 15;">
                            <font>
                               <Font name="Bell MT Bold" size="24.0" />
                            </font>
                         </TextField>
-                        <TextField prefHeight="58.0" prefWidth="344.0" promptText="Votre mots de passe" style="-fx-background-radius: 15;">
+                        <TextField prefHeight="58.0" fx:id="mdp" prefWidth="344.0" promptText="Votre mots de passe" style="-fx-background-radius: 15;">
                            <font>
                               <Font name="Bell MT Bold" size="24.0" />
                            </font>
@@ -110,7 +110,7 @@
                         <Font name="Cooper Black" size="20.0" />
                      </font>
                   </Label>
-                  <Button layoutX="84.0" layoutY="585.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="346.0" style="-fx-background-radius: 20;" styleClass="boutonConnexion" stylesheets="@../../../../../css/styleDash.css" text="Connexion" textFill="WHITE">
+                  <Button layoutX="84.0" layoutY="585.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="346.0" style="-fx-background-radius: 20;" styleClass="boutonConnexion" stylesheets="@../../../../../css/styleDash.css" text="Connexion" textFill="WHITE" onAction="#handleLoginButtonAction">
                      <font>
                         <Font name="Cooper Black" size="32.0" />
                      </font>

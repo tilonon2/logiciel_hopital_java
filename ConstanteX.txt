@@ -30,4 +30,44 @@ Pression Artérielle : 121
 Fréquence Respiratoire : 12
 Saturation en Oxygène : 21
 
+------------------------------------------------Taille : 23
+Poids : 23
+Temperature Corporelle : 23
+Frequence Cardiaque : 23
+Pression Artérielle : 23
+Fréquence Respiratoire : 23
+Saturation en Oxygène : 23
+
+------------------------------------------------Taille : 12
+Poids : 12
+Temperature Corporelle : 1
+Frequence Cardiaque : 12
+Pression Artérielle : 12
+Fréquence Respiratoire : 12
+Saturation en Oxygène : 21
+
+------------------------------------------------Taille : 21
+Poids : 21
+Temperature Corporelle : 12
+Frequence Cardiaque : 21
+Pression Artérielle : 2
+Fréquence Respiratoire : 2
+Saturation en Oxygène : 1
+
+------------------------------------------------Taille : 11
+Poids : 21
+Temperature Corporelle : 12
+Frequence Cardiaque : 12
+Pression Artérielle : 12
+Fréquence Respiratoire : 12
+Saturation en Oxygène : 12
+
+------------------------------------------------Taille : 12
+Poids : 231
+Temperature Corporelle : 21
+Frequence Cardiaque : 21
+Pression Artérielle : 21
+Fréquence Respiratoire : 21
+Saturation en Oxygène : 21
+
 ------------------------------------------------

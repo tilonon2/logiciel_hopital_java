@@ -3,7 +3,9 @@ module com.example.hopital {
     requires javafx.fxml;
     requires java.sql;
     requires com.jfoenix;
-    requires fontawesomefx;
+    //requires jfoenix;
+    //requires jfoenix;
+    //requires fontawesomefx;
 
 
     opens com.example.hopital to javafx.fxml;

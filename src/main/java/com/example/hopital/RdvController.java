@@ -1,9 +1,12 @@
 package com.example.hopital;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -11,89 +14,162 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.fxml.Initializable;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.YearMonth;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class RdvController implements Initializable {
-    private LocalDate currentDate;
-    private GridPane calendarGrid;
-    private Label monthLabel;
+    @FXML
+    private ComboBox<String> acte_medicale;
+
+    @FXML
+    private ComboBox<String> attente;
+
+    @FXML
+    private TextArea diagnostic;
+
+    @FXML
+    private ImageView image;
+
+    @FXML
+    private ImageView image1;
+
+    @FXML
+    private TextArea objeectif;
+
+    @FXML
+    private DatePicker rdv;
+
+    @FXML
+    private TextArea resultat;
+
+    @FXML
+    private Button save;
 
 
-    public void initialize(URL url, ResourceBundle rb){
-        currentDate = LocalDate.now();
+    private DatabaseManager dbManager;
+    private Map<String, Integer> patientMap = new HashMap<>();
+    private ObservableList<String> waitingPatients = FXCollections.observableArrayList();
 
-        // Create layout elements
-        calendarGrid = createCalendarGrid(currentDate);
-        monthLabel = new Label(currentDate.getMonth().toString() + " " + currentDate.getYear());
-        monthLabel.setFont(new Font(20));
-        Button leftButton = new Button("<-");
-        Button rightButton = new Button("->");
-
-        // Handle button clicks to change months
-        leftButton.setOnAction(event -> {
-            currentDate = currentDate.minusMonths(1);
-            updateCalendar(currentDate);
-        });
-        rightButton.setOnAction(event -> {
-            currentDate = currentDate.plusMonths(1);
-            updateCalendar(currentDate);
-        });
-
-        // Create main layout
-        HBox buttonBox = new HBox(10, leftButton, monthLabel, rightButton);
-        buttonBox.setPadding(new Insets(10));
-        VBox mainVBox = new VBox(10, buttonBox, calendarGrid);
-        mainVBox.setPadding(new Insets(20));
-
-
+    public RdvController() {
+        dbManager = DatabaseManager.getInstance();
     }
 
-    private GridPane createCalendarGrid(LocalDate date) {
-        GridPane grid = new GridPane();
-        grid.setPadding(new Insets(10));
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        loadWaitingPatients();
+        attente.setItems(waitingPatients);
 
-        // Define day labels
-        String[] weekdays = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
-        for (int i = 0; i < weekdays.length; i++) {
-            Label dayLabel = new Label(weekdays[i]);
-            dayLabel.setFont(Font.font(12));
-            grid.add(dayLabel, i, 0);
+        acte_medicale.getItems().add("radio");
+        acte_medicale.getItems().add("prise_de_sang");
+        acte_medicale.getItems().add("autre");
+    }
+
+    private void loadWaitingPatients() {
+        String query = "SELECT id, id_patient FROM consultation WHERE acte_medicale IN ('radio', 'prise_de_sang')";
+        try (Connection conn = dbManager.getConnection();
+             PreparedStatement pst = conn.prepareStatement(query);
+             ResultSet rs = pst.executeQuery()) {
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                int idPatient = rs.getInt("id_patient");
+                String patientName = getPatientNameById(idPatient);
+
+                waitingPatients.add(patientName);
+                patientMap.put(patientName, id);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(RdvController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
 
-        // Calculate first day of the month and offset
-        YearMonth yearMonth = YearMonth.of(date.getYear(), date.getMonth());
-        int firstDay = yearMonth.atDay(1).getDayOfWeek().getValue() - 1; // 0-based index
+    private String getPatientNameById(int patientId) {
+        String query = "SELECT nom FROM patient WHERE id = ?";
+        try (Connection conn = dbManager.getConnection();
+             PreparedStatement pst = conn.prepareStatement(query)) {
+            pst.setInt(1, patientId);
 
-        // Fill calendar grid with days, highlighting current day
-        int dayCount = 1;
-        for (int row = 1; row <= 6; row++) {
-            for (int col = 0; col < 7; col++) {
-                int index = row * 7 + col;
-                if (index < firstDay || index >= firstDay + yearMonth.lengthOfMonth()) {
-                    // Empty cell outside current month
-                    grid.add(new Label(""), col, row);
-                } else {
-                    Label dayLabel = new Label(Integer.toString(dayCount));
-                    if (dayCount == currentDate.getDayOfMonth()) {
-                        dayLabel.setStyle("-fx-background-color: lightblue;"); // Highlight current day
-                    }
-                    grid.add(dayLabel, col, row);
-                    dayCount++;
+            try (ResultSet rs = pst.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getString("nom");
                 }
             }
+        } catch (SQLException ex) {
+            Logger.getLogger(RdvController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        return grid;
+        return null; // Retourner null si aucun nom n'est trouvé
     }
 
+    @FXML
+    private void saveExamenSupData() {
+        String updateExamenSupQuery = "UPDATE examen_sup SET objectif = ?, resultat = ?, diagnostic = ?, date_examen = ?, rdv = ?, valider = ? WHERE id_consultation = ?";
 
-    private void updateCalendar(LocalDate newDate) {
-        calendarGrid.getChildren().clear();  // Remove existing calendar elements
-        calendarGrid = createCalendarGrid(newDate);  // Recreate calendar with new date
-        monthLabel.setText(newDate.getMonth().toString() + " " + newDate.getYear());
+        try (Connection conn = dbManager.getConnection();
+             PreparedStatement pstUpdateExamenSup = conn.prepareStatement(updateExamenSupQuery)) {
+
+            // Récupérer les valeurs des champs
+            String selectedPatientName = attente.getValue();
+            int selectedPatientId = patientMap.getOrDefault(selectedPatientName, -1);
+            int idConsultation = getIdConsultationByPatientId(selectedPatientId);
+            String acteMedicaleText = acte_medicale.getValue();
+            String diagnosticText = diagnostic.getText();
+            String objectifText = objeectif.getText();
+            String resultatText = resultat.getText();
+            LocalDate dateExamen = LocalDate.now();
+            LocalDate rdvDate = rdv.getValue();
+            LocalTime rdvTime = LocalTime.of(8, 0); // 08:00 par défaut
+
+            // Définir les valeurs pour la requête de mise à jour de examen_sup
+
+            pstUpdateExamenSup.setString(1, objectifText);
+            pstUpdateExamenSup.setString(2, resultatText);
+            pstUpdateExamenSup.setString(3, diagnosticText);
+            pstUpdateExamenSup.setDate(4, java.sql.Date.valueOf(dateExamen));
+            pstUpdateExamenSup.setDate(5, java.sql.Date.valueOf(rdvDate));
+            pstUpdateExamenSup.setBoolean(6, (false));
+            pstUpdateExamenSup.setInt(7, (idConsultation));
+
+
+            pstUpdateExamenSup.executeUpdate();
+            System.out.println("Examen supplémentaire mis à jour avec succès.");
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Examen");
+            alert.setHeaderText("Enregistrement dun examen");
+            alert.setContentText(" examen enregistré avec succès");
+            alert.showAndWait();
+
+
+        } catch (SQLException ex) {
+            Logger.getLogger(RdvController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
+    private int getIdConsultationByPatientId(int patientId) {
+        String query = "SELECT id FROM consultation WHERE id_patient = ? ORDER BY id DESC LIMIT 1";
+        try (Connection conn = dbManager.getConnection();
+             PreparedStatement pst = conn.prepareStatement(query)) {
+            pst.setInt(1, patientId);
+
+            try (ResultSet rs = pst.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("id");
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(RdvController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return -1; // Retourner -1 si aucune consultation n'est trouvée
+    }
 
 }
