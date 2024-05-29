@@ -9,6 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import model.Book;
@@ -101,15 +102,24 @@ public class CalendarController implements Initializable {
                         date.setFill(Color.WHITE);
                         date.setStyle("-fx-font-weight: bold;");
 
+                        // Vérifiez si c'est la date actuelle pour entourer avec un cercle blanc
+                        if (today.getYear() == dateFocus.getYear() && today.getMonth() == dateFocus.getMonth() && today.getDayOfMonth() == currentDate) {
+                            Circle circle = new Circle(rectangleWidth / 2);
+                            circle.setFill(Color.TRANSPARENT);
+                            circle.setStroke(Color.web("#fff"));
+                            circle.setStrokeWidth(2);
+                            stackPane.getChildren().add(circle);
+                        }
+
                         stackPane.getChildren().add(date);
 
+                        // Vérifiez s'il y a des activités pour cette date pour ajouter un point rouge
                         List<CalendarActivity> calendarActivities = calendarActivityMap.get(currentDate);
-                        if (calendarActivities != null) {
-                            // createCalendarActivity(calendarActivities, rectangleHeight, rectangleWidth, stackPane);
+                        if (calendarActivities != null && !calendarActivities.isEmpty()) {
+                            Circle eventIndicator = new Circle(3, Color.RED);
+                            eventIndicator.setTranslateY(rectangleHeight / 2 - 5);
+                            stackPane.getChildren().add(eventIndicator);
                         }
-                    }
-                    if (today.getYear() == dateFocus.getYear() && today.getMonth() == dateFocus.getMonth() && today.getDayOfMonth() == currentDate) {
-                        rectangle.setStroke(Color.BLACK);
                     }
                 }
                 calendar.getChildren().add(stackPane);
@@ -154,29 +164,47 @@ public class CalendarController implements Initializable {
                 e.printStackTrace();
             }
         } else {
-        System.err.println("bookContainer est null !");
+            System.err.println("bookContainer est null !");
         }
     }
     private Map<Integer, List<CalendarActivity>> getCalendarActivitiesMonth(ZonedDateTime dateFocus) {
         Map<Integer, List<CalendarActivity>> calendarActivityMap = new HashMap<>();
+        String jdbcURL = "jdbc:mysql://localhost:3306/java_hopital";
+        String dbUser = "root";
+        String dbPassword = "";
 
-        // Génération de quelques activités fictives pour le mois en cours
-        Random random = new Random();
-        int monthMaxDate = dateFocus.getMonth().maxLength();
-        for (int i = 1; i <= monthMaxDate; i++) {
-            List<CalendarActivity> activities = new ArrayList<>();
-            // Ajoutez ici votre logique pour récupérer les activités réelles de la base de données
-            // Pour l'instant, je vais générer des activités fictives
-            int numberOfActivities = random.nextInt(3); // Maximum 3 activités par jour
-            for (int j = 0; j < numberOfActivities; j++) {
-                int hour = random.nextInt(24); // Heure aléatoire
-                int minute = random.nextInt(60); // Minute aléatoire
-                ZonedDateTime activityDateTime = ZonedDateTime.of(dateFocus.getYear(), dateFocus.getMonthValue(), i, hour, minute, 0, 0, dateFocus.getZone());
-                CalendarActivity activity = new CalendarActivity(activityDateTime, "Titre activité", 123); // Remplacez "Titre activité" par le titre réel de l'activité
-                activities.add(activity);
+        String query = "SELECT DAY(date_rdv) as day, heure_rdv, titre_rdv FROM rendez_vous WHERE MONTH(date_rdv) = ? AND YEAR(date_rdv) = ?";
+
+        try (Connection connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+
+            preparedStatement.setInt(1, dateFocus.getMonthValue());
+            preparedStatement.setInt(2, dateFocus.getYear());
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    int day = resultSet.getInt("day");
+                    String heureRdv = resultSet.getString("heure_rdv");
+                    String titreRdv = resultSet.getString("titre_rdv");
+
+                    // Debug: Print the data fetched from database
+                    System.out.println("Fetched data - Day: " + day + ", Hour: " + heureRdv + ", Title: " + titreRdv);
+
+                    ZonedDateTime activityDate = dateFocus.withDayOfMonth(day)
+                            .withHour(Integer.parseInt(heureRdv.split(":")[0]))
+                            .withMinute(Integer.parseInt(heureRdv.split(":")[1]));
+
+                    CalendarActivity activity = new CalendarActivity(activityDate, titreRdv);
+                    calendarActivityMap.computeIfAbsent(day, k -> new ArrayList<>()).add(activity);
+                }
             }
-            calendarActivityMap.put(i, activities);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+
+        // Debug: Print the calendarActivityMap to verify the mapping
+        System.out.println("Calendar Activity Map: " + calendarActivityMap);
 
         return calendarActivityMap;
     }

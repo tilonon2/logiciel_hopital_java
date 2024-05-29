@@ -9,8 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="991.0" prefWidth="1082.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.TraitementController">
+<AnchorPane prefHeight="991.0" prefWidth="1082.0" style="-fx-background-color: #ECF3FD;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.TraitementController">
    <children>
       <Text layoutX="468.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRAITEMENTS" wrappingWidth="165.833984375">
          <font>
