@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,7 +15,7 @@
    <children>
       <BorderPane prefHeight="980.0" prefWidth="1381.0">
          <left>
-            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="299.0" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #8E95A5; -fx-background-color: #fff;" BorderPane.alignment="CENTER">
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="299.0" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #8E95A5; -fx-background-color: #2f3192;" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fitHeight="223.0" fitWidth="260.0" layoutX="32.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="-10.0">
                      <image>
@@ -127,7 +128,7 @@
                            <children>
                               <AnchorPane HBox.hgrow="ALWAYS">
                                  <children>
-                                    <JFXButton fx:id="utilisateurs11111" alignment="BASELINE_LEFT" graphicTextGap="10.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#loadTraitement" prefHeight="20.0" prefWidth="200.0" ripplerFill="#1a1fa3" styleClass="boutontest3" stylesheets="@styleDash.css" text="Traitement" textFill="#8e95a5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <JFXButton fx:id="utilisateurs11111" alignment="BASELINE_LEFT" graphicTextGap="10.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#loadTraitement" prefHeight="20.0" prefWidth="200.0" ripplerFill="#1a1fa3" styleClass="boutontest3" stylesheets="@styleDash.css" text="Activités" textFill="#8e95a5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
                                           <Font name="Berlin Sans FB Demi Bold" size="30.0" />
                                        </font>
@@ -187,7 +188,7 @@
                            <children>
                               <AnchorPane HBox.hgrow="ALWAYS">
                                  <children>
-                                    <JFXButton fx:id="dashboard1" alignment="BASELINE_LEFT" graphicTextGap="10.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#loadtype_specialiste" prefHeight="20.0" prefWidth="200.0" ripplerFill="#1a1fa3" styleClass="boutontest3" stylesheets="@styleDash.css" text="Specialistes" textFill="#8e95a5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <JFXButton fx:id="dashboard1" alignment="BASELINE_LEFT" graphicTextGap="10.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#loadtype_specialiste" prefHeight="20.0" prefWidth="200.0" ripplerFill="#1a1fa3" styleClass="boutontest3" stylesheets="@styleDash.css" text="Game" textFill="#8e95a5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
                                           <Font name="Berlin Sans FB Demi Bold" size="30.0" />
                                        </font>
@@ -223,6 +224,18 @@
                               </AnchorPane>
                            </children>
                         </HBox>
+                        <AnchorPane prefHeight="163.0" prefWidth="298.0" style="-fx-background-color: #71CEBF; -fx-background-radius: 30;">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="114.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/illustration/90908508-2775-464d-9b17-503881cea430.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="20.0" />
+                           </VBox.margin>
+                        </AnchorPane>
                      </children>
                   </VBox>
                </children>

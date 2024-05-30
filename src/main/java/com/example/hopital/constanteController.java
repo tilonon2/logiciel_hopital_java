@@ -186,6 +186,35 @@ private void insertConstanteData() {
     }
 }
 
+    @FXML
+    // Méthode pour changer de page
+    public void switchToPatientPage(ActionEvent event) {
+        try {
+            // Charger le fichier FXML
+            Parent patientPageParent = FXMLLoader.load(getClass().getResource("patient.fxml"));
+
+            // Créer une nouvelle scène avec le parent chargé
+            Scene patientPageScene = new Scene(patientPageParent);
+
+            // Obtenir la fenêtre actuelle (stage)
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            // Définir la scène de la fenêtre actuelle
+            currentStage.setScene(patientPageScene);
+            currentStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+
+    // Exemple d'événement déclencheur
+    public void onSubmitButtonClicked(ActionEvent event) {
+        // Appeler la méthode de changement de page
+        switchToPatientPage(event);
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

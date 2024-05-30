@@ -9,17 +9,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="329.0" prefWidth="410.0" style="-fx-background-color: #2F3192; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.CalendarController">
+<VBox alignment="CENTER" prefHeight="329.0" prefWidth="410.0" style="-fx-background-color: #fff; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #2F3192;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.CalendarController2">
    <children>
       <HBox alignment="BOTTOM_CENTER" prefHeight="27.0" prefWidth="238.0" spacing="5.0">
          <children>
             <Button mnemonicParsing="false" onAction="#backOneMonth" opacity="0.45" text="&lt;" />
-            <Text fx:id="month" fill="#f5f2f2" strokeType="OUTSIDE" strokeWidth="0.0" text="####">
+            <Text fx:id="month" fill="#f5f2f2" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #2F3192;" text="####">
                <font>
                   <Font name="Baloo 2 SemiBold" size="19.0" />
                </font>
             </Text>
-            <Text fx:id="year" fill="#fffdfd" strokeType="OUTSIDE" strokeWidth="0.0" text="####">
+            <Text fx:id="year" fill="#fffdfd" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #2F3192;" text="####">
                <font>
                   <Font name="Baloo 2 SemiBold" size="19.0" />
                </font>
@@ -30,39 +30,39 @@
             <Insets top="5.0" />
          </padding>
       </HBox>
-      <HBox fx:id="hbox" alignment="CENTER" prefHeight="25.0" prefWidth="387.0" spacing="40.75" style="-fx-border-color: white; -fx-border-radius: 10;">
+      <HBox fx:id="hbox" alignment="CENTER" prefHeight="25.0" prefWidth="387.0" spacing="40.75" style="-fx-border-color: #2F3192; -fx-border-radius: 10;">
          <children>
-            <Text fill="#f5f4f4" strokeType="OUTSIDE" strokeWidth="0.0" text="Su" textAlignment="CENTER">
+            <Text fill="#f5f4f4" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #2F3192;" text="Su" textAlignment="CENTER">
                <font>
                   <Font name="Baloo 2 SemiBold" size="13.0" />
                </font>
             </Text>
-            <Text fill="#fcf8f8" layoutX="213.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mo" textAlignment="CENTER">
+            <Text fill="#fcf8f8" layoutX="213.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #2F3192;" text="Mo" textAlignment="CENTER">
                <font>
                   <Font name="Baloo 2 SemiBold" size="13.0" />
                </font>
             </Text>
-            <Text fill="#fcfafa" layoutX="222.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tu" textAlignment="CENTER">
+            <Text fill="#fcfafa" layoutX="222.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #2F3192;" text="Tu" textAlignment="CENTER">
                <font>
                   <Font name="Baloo 2 SemiBold" size="13.0" />
                </font>
             </Text>
-            <Text fill="#f5f3f3" layoutX="232.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We" textAlignment="CENTER">
+            <Text fill="#f5f3f3" layoutX="232.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #2F3192;" text="We" textAlignment="CENTER">
                <font>
                   <Font name="Baloo 2 SemiBold" size="13.0" />
                </font>
             </Text>
-            <Text fill="#f2eeee" layoutX="241.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Th" textAlignment="CENTER">
+            <Text fill="#f2eeee" layoutX="241.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #2F3192;" text="Th" textAlignment="CENTER">
                <font>
                   <Font name="Baloo 2 SemiBold" size="13.0" />
                </font>
             </Text>
-            <Text fill="#f5f3f3" layoutX="251.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fr" textAlignment="CENTER">
+            <Text fill="#f5f3f3" layoutX="251.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #2F3192;" text="Fr" textAlignment="CENTER">
                <font>
                   <Font name="Baloo 2 SemiBold" size="13.0" />
                </font>
             </Text>
-            <Text fill="#f8f5f5" layoutX="266.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sa" textAlignment="CENTER">
+            <Text fill="#f8f5f5" layoutX="266.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #2F3192;" text="Sa" textAlignment="CENTER">
                <font>
                   <Font name="Baloo 2 SemiBold" size="14.0" />
                </font>

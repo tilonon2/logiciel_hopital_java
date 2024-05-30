@@ -3,6 +3,9 @@ package com.example.hopital;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import model.Book;
@@ -21,9 +24,19 @@ public class dashController implements Initializable {
     private VBox bookContainer;
     private List<Book> recentlyAdded;
     private List<Book> booksVertical;
+    @FXML
+    private LineChart<?, ?> lineChart;
+    @FXML
+    private Label afficher_Nom_Utilisateur;
+    @FXML
+    private Label afficher_Prenom_Utilisateur;
+    @FXML
+    private Label afficher_NomEtPrenom_Utilisateur;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        iniLineChart();
+
         recentlyAdded = new ArrayList<>(recentlyAdded());
         booksVertical = new ArrayList<>(booksVertical());
 
@@ -51,13 +64,28 @@ public class dashController implements Initializable {
         }
     }
 
+    private void iniLineChart() {
+        XYChart.Series series = new XYChart.Series();
+        series.getData().add(new XYChart.Data<>("Konaté Tilonon", 8));
+        series.getData().add(new XYChart.Data<>("Diakité Sekou", 12));
+        series.getData().add(new XYChart.Data<>("Radji Sad", 10));
+        series.getData().add(new XYChart.Data<>("Yeo François", 15));
+        series.getData().add(new XYChart.Data<>("Dr Javad", 12));
+        series.getData().add(new XYChart.Data<>("Dr Desiré", 8));
+        series.getData().add(new XYChart.Data<>("Dr Fofana", 5));
+        lineChart.getData().addAll(series);
+        lineChart.lookup(".chart-plot-background").setStyle("fx-background-color: transparent;");
+        series.getNode().setStyle("fx-stroke: #2F3192");
+    }
+
     private List<Book> recentlyAdded() {
         List<Book> ls = new ArrayList<>();
-        ls.add(createBook("/images/newpatients.png", "Nouveaux patients", "3"));
-        ls.add(createBook("/images/rdvprevuscejour.png", "RDV prévus ce jour", "0"));
+        int rdvCount = getTodayRdvCount();
+        ls.add(createBook("/images/newpatients.png", "Nouveaux patients", String.valueOf(countNewPatients())));
+        ls.add(createBook("/images/rdvprevuscejour.png", "RDV prévus ce jour", String.valueOf(rdvCount)));
         ls.add(createBook("/images/totaldespraticiens.png", "Total des praticiens", "10"));
-        ls.add(createBook("/images/totalpatient.png", "Total des patients", "9"));
-        ls.add(createBook("/images/nouveaurdv.png", "Nouveau RDV", "1"));
+        ls.add(createBook("/images/totalpatient.png", "Total des patients", String.valueOf(countTotalPatients())));
+        ls.add(createBook("/images/nouveaurdv.png", "Nouveau RDV", String.valueOf(countNewRDV())));
         ls.add(createBook("/images/nouvellesconsultations.png", "Nouvelles consultations", "1"));
         ls.add(createBook("/images/consultation-medicale.png", "Nouvelles hospitalisations", "1"));
         ls.add(createBook("/images/nouveausoins.png", "Nouveau soins", "1"));
@@ -95,6 +123,103 @@ public class dashController implements Initializable {
         }
 
         return ls;
+    }
+
+    // Méthode pour avoir le nombre de rendez-vous prévu en fonction du jour
+    private int getTodayRdvCount() {
+        int count = 0;
+        String jdbcURL = "jdbc:mysql://localhost:3306/java_hopital";
+        String dbUser = "root";
+        String dbPassword = "";
+
+        String query = "SELECT COUNT(*) AS count FROM rendez_vous WHERE date_rdv = CURDATE()";
+
+        try (Connection connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
+             Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
+
+            if (resultSet.next()) {
+                count = resultSet.getInt("count");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return count;
+    }
+
+    // Méthode pour avoir le nombre de nouveaux rendez-vous enregistrés à partir de la date actuelle
+    private int countNewRDV() {
+        int count = 0;
+        String jdbcURL = "jdbc:mysql://localhost:3306/java_hopital";
+        String dbUser = "root";
+        String dbPassword = "";
+
+        String query = "SELECT COUNT(*) AS total FROM rendez_vous WHERE date_rdv >= CURDATE()";
+
+        try (Connection connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
+             Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
+
+            if (resultSet.next()) {
+                count = resultSet.getInt("total");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return count;
+    }
+
+    // Méthode pour avoir le nombre total de patients
+    private int countTotalPatients() {
+        int count = 0;
+        String jdbcURL = "jdbc:mysql://localhost:3306/java_hopital";
+        String dbUser = "root";
+        String dbPassword = "";
+
+        String query = "SELECT COUNT(*) AS total FROM patient";
+
+        try (Connection connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
+             Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
+
+            if (resultSet.next()) {
+                count = resultSet.getInt("total");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return count;
+    }
+
+    // Méthode pour avoir le nombre de nouveaux patients enregistrés à partir de la date actuelle
+    private int countNewPatients() {
+        int count = 0;
+        String jdbcURL = "jdbc:mysql://localhost:3306/java_hopital";
+        String dbUser = "root";
+        String dbPassword = "";
+
+        // Requête SQL pour compter les patients ajoutés à partir d'aujourd'hui
+        String query = "SELECT COUNT(*) AS total FROM patient WHERE DATE(naissance) >= CURDATE()";
+
+        try (Connection connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
+             Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
+
+            if (resultSet.next()) {
+                count = resultSet.getInt("total");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return count;
     }
 
     private Book createBook(String imageSrc, String author, String name) {

@@ -1,49 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="991.0" prefWidth="1082.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.TraitementController">
+<AnchorPane prefHeight="991.0" prefWidth="1082.0" style="-fx-background-color: #ECF3FD;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.TraitementController">
    <children>
-      <Text layoutX="468.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRAITEMENTS" wrappingWidth="165.833984375">
-         <font>
-            <Font name="System Bold" size="23.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="477.0" fitWidth="435.0" layoutX="363.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../images/traitement_2.png" />
-         </image>
-      </ImageView>
-      <TableView layoutX="154.0" layoutY="495.0" prefHeight="464.0" prefWidth="902.0">
-         <columns>
-            <TableColumn prefWidth="217.0" text="NOM" />
-            <TableColumn minWidth="0.0" prefWidth="194.0" text="PRENOM" />
-            <TableColumn prefWidth="187.0" text="DATE DE CONSULTATION" />
-            <TableColumn prefWidth="303.0" text="STATUS DU TRAITEMENT" />
-         </columns>
-      </TableView>
-      <Button layoutX="17.0" layoutY="576.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="124.0" text="PRESCRIPTION">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="17.0" layoutY="670.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="124.0" text="CLASSER">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </Button>
-      <Button layoutX="17.0" layoutY="760.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="124.0" text="IMPRIMER">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </Button>
+      <VBox alignment="TOP_CENTER" spacing="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Hospital Activity Tracker" />
+         <HBox spacing="10">
+            <Button onAction="#showConsultations" styleClass="boutonStyle" stylesheets="@styleDash.css" text="Consultations" />
+            <Button onAction="#showConstantes" styleClass="boutonStyle" stylesheets="@styleDash.css" text="Constantes" />
+            <Button onAction="#showRendezVous" styleClass="boutonStyle" stylesheets="@styleDash.css" text="Rendez-vous" />
+            <Button onAction="#showPatients" styleClass="boutonStyle" stylesheets="@styleDash.css" text="Patients" />
+         </HBox>
+         <TableView fx:id="activityTable" prefHeight="300" prefWidth="600">
+            <columns>
+               <TableColumn fx:id="typeColumn" prefWidth="513.0" text="Type" />
+               <TableColumn fx:id="descriptionColumn" prefWidth="317.0" text="Description" />
+               <TableColumn fx:id="dateColumn" prefWidth="231.0" text="Date" />
+            </columns>
+         </TableView>
+         <HBox alignment="CENTER" spacing="20.0">
+            <AnchorPane prefHeight="232.0" prefWidth="1089.0">
+               <children>
+                  <Label layoutX="430.0" layoutY="14.0" prefHeight="46.0" prefWidth="259.0" text="Nombre d'activité par type">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="286.0" fitWidth="259.0" layoutX="753.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/stat1.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <VBox spacing="15.0" />
+            <VBox />
+         </HBox>
+      </VBox>
+      <VBox layoutX="9.0" layoutY="627.0" prefHeight="364.0" prefWidth="1062.0">
+         <children>
+            <AnchorPane prefHeight="365.0" prefWidth="1062.0">
+               <children>
+                  <ImageView fitHeight="649.0" fitWidth="441.0" layoutY="-282.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/stat2.png" />
+                     </image>
+                  </ImageView>
+                  <BarChart fx:id="barChart" layoutX="440.0" layoutY="37.0" prefHeight="326.0" prefWidth="608.0">
+                     <xAxis>
+                        <CategoryAxis label="Activity Type" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis label="Count" />
+                     </yAxis>
+                  </BarChart>
+                  <Label layoutX="704.0" layoutY="4.0" text="Activités">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <PieChart fx:id="pieChart" layoutX="10.0" layoutY="-241.0" prefHeight="244.0" prefWidth="411.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

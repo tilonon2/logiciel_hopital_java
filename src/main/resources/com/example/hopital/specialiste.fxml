@@ -10,40 +10,38 @@
 <?import javafx.scene.text.Text?>
 
 
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <AnchorPane prefHeight="991.0" prefWidth="1082.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hopital.SpecialisteController">
    <children>
-      <Text layoutX="468.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRAITEMENTS" wrappingWidth="165.833984375">
-         <font>
-            <Font name="System Bold" size="23.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="477.0" fitWidth="435.0" layoutX="363.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../images/traitement_2.png" />
-         </image>
-      </ImageView>
-      <TableView layoutX="154.0" layoutY="495.0" prefHeight="464.0" prefWidth="902.0">
-         <columns>
-            <TableColumn prefWidth="217.0" text="NOM" />
-            <TableColumn minWidth="0.0" prefWidth="194.0" text="PRENOM" />
-            <TableColumn prefWidth="187.0" text="DATE DE CONSULTATION" />
-            <TableColumn prefWidth="303.0" text="STATUS DU TRAITEMENT" />
-         </columns>
-      </TableView>
-      <Button layoutX="17.0" layoutY="576.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="124.0" text="PRESCRIPTION">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="17.0" layoutY="670.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="124.0" text="CLASSER">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </Button>
-      <Button layoutX="17.0" layoutY="760.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="124.0" text="IMPRIMER">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </Button>
+      <VBox alignment="CENTER" spacing="10.0" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="10.0">
+         <Label text="Tic-Tac-Toe" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+         <GridPane fx:id="board" gridLinesVisible="true">
+            <columnConstraints>
+               <ColumnConstraints percentWidth="33.33"/>
+               <ColumnConstraints percentWidth="33.33"/>
+               <ColumnConstraints percentWidth="33.33"/>
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints percentHeight="33.33"/>
+               <RowConstraints percentHeight="33.33"/>
+               <RowConstraints percentHeight="33.33"/>
+            </rowConstraints>
+            <Button fx:id="button0" onAction="#handleButtonAction" GridPane.columnIndex="0" GridPane.rowIndex="0" prefHeight="100" prefWidth="100"/>
+            <Button fx:id="button1" onAction="#handleButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="0" prefHeight="100" prefWidth="100"/>
+            <Button fx:id="button2" onAction="#handleButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="0" prefHeight="100" prefWidth="100"/>
+            <Button fx:id="button3" onAction="#handleButtonAction" GridPane.columnIndex="0" GridPane.rowIndex="1" prefHeight="100" prefWidth="100"/>
+            <Button fx:id="button4" onAction="#handleButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="1" prefHeight="100" prefWidth="100"/>
+            <Button fx:id="button5" onAction="#handleButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="1" prefHeight="100" prefWidth="100"/>
+            <Button fx:id="button6" onAction="#handleButtonAction" GridPane.columnIndex="0" GridPane.rowIndex="2" prefHeight="100" prefWidth="100"/>
+            <Button fx:id="button7" onAction="#handleButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="2" prefHeight="100" prefWidth="100"/>
+            <Button fx:id="button8" onAction="#handleButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="2" prefHeight="100" prefWidth="100"/>
+         </GridPane>
+         <Label fx:id="statusLabel" text="Player X's turn"/>
+         <Button text="Restart" onAction="#handleRestart"/>
+      </VBox>
    </children>
 </AnchorPane>

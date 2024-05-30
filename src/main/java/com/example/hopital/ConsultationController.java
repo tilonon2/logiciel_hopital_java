@@ -178,9 +178,9 @@ public class ConsultationController implements Initializable {
             // Préparer les valeurs pour la requête d'insertion de examen_sup
             pstInsertExamenSup.setInt(1, idConsultation);
             pstInsertExamenSup.setString(2, acteMedicaleText);
-            pstInsertExamenSup.setString(3, "Objectif par défaut");  // Remplacez par une valeur réelle si disponible
-            pstInsertExamenSup.setString(4, "Résultat par défaut");  // Remplacez par une valeur réelle si disponible
-            pstInsertExamenSup.setString(5, "diagnostic par défaut");         // Vous pouvez utiliser une autre valeur si nécessaire
+            pstInsertExamenSup.setString(3, "sang");  // Remplacez par une valeur réelle si disponible
+            pstInsertExamenSup.setString(4, "sang");  // Remplacez par une valeur réelle si disponible
+            pstInsertExamenSup.setString(5, "sang");         // Vous pouvez utiliser une autre valeur si nécessaire
             pstInsertExamenSup.setDate(6, rdvDate);                  // Utiliser la date de rendez-vous pour la date de l'examen
             pstInsertExamenSup.setDate(7, rdvDate_2);                     // Utiliser l'heure du rendez-vous pour l'heure de l'examen
 
