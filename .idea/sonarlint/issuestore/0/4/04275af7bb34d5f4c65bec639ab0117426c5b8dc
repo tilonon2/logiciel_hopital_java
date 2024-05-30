@@ -1,0 +1,49 @@
+
+j
+java:S1192ı"GDefine a constant instead of duplicating this literal "Erreur" 4 times.(Û´†‹ÿÿÿÿÿ8í‰Ö¿û1
+S
+java:S1141Š"5Extract this nested try block into a separate method.(ñë¼­8í‰Ö¿û1
+X
+java:S1141¢"5Extract this nested try block into a separate method.(ıŞëàúÿÿÿÿ8í‰Ö¿û1
+{	java:S116"ZRename this field "adresse_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùÇ“ùÿÿÿÿ8 ­¸û1
+	java:S116"^Rename this field "adresse_patient_col" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿™êùÿÿÿÿ8 ­¸û1
+z	java:S116!"YRename this field "carnet_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡¶½Øÿÿÿÿÿ8¡­¸û1
+t	java:S116$"XRename this field "email_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“»¹³8¡­¸û1
+x	java:S116'"\Rename this field "email_patient_col" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘°ø¸8¡­¸û1
+z	java:S116*"^Rename this field "enregistrer_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù¼Ê¢8¡­¸û1
+z	java:S116-"YRename this field "id_patient_col" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹óùÿÿÿÿ8¡­¸û1
+w	java:S1160"[Rename this field "imprimer_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—’ÑÔ8¡­¸û1
+|	java:S1163"[Rename this field "modifier_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áò“ûÿÿÿÿ8¡­¸û1
+x	java:S1166"\Rename this field "naissance_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ÊÄÏ8¡­¸û1
+|	java:S1169"`Rename this field "naissance_patient_col" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôÖ8¡­¸û1
+	java:S116<"^Rename this field "nationalite_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÙñşÿÿÿÿ8¡­¸û1
+ƒ	java:S116?"bRename this field "nationalite_patient_col" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôÊ¼šøÿÿÿÿ8¡­¸û1
+w	java:S116B"VRename this field "nom_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÇ¹èıÿÿÿÿ8¡­¸û1
+{	java:S116E"ZRename this field "nom_patient_col" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥²Ô”ùÿÿÿÿ8¡­¸û1
+z	java:S116H"YRename this field "prenom_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìÓ»Úıÿÿÿÿ8¡­¸û1
+~	java:S116K"]Rename this field "prenom_patient_col" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£ıÊİûÿÿÿÿ8¡­¸û1
+s	java:S116N"WRename this field "save_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î¨ï8¡­¸û1
+z	java:S116Q"YRename this field "sexe_f_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°Õûÿÿÿÿ8¡­¸û1
+z	java:S116T"YRename this field "sexe_m_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿÕ‹üÿÿÿÿ8¡­¸û1
+w	java:S116W"[Rename this field "sexe_patient_col" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Åˆù8¡­¸û1
+x	java:S116Z"\Rename this field "supprimer_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©áËË8¡­¸û1
+y	java:S116]"XRename this field "table_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œÆ¡ƒøÿÿÿÿ8¡­¸û1
+}	java:S116`"\Rename this field "telephone_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òÀı³şÿÿÿÿ8¡­¸û1
+|	java:S116c"`Rename this field "telephone_patient_col" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿÙæ³8¡­¸û1
+t	java:S116f"XRename this field "trier_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š˜ï·8¡­¸û1
+M
+java:S1905Ú"*Remove this unnecessary cast to "Patient".(Ìß†İúÿÿÿÿ8­­¸û1
+^	java:S125ì"<This block of commented-out lines of code should be removed.(×¹¡íøÿÿÿÿ8®­¸û1
+M
+java:S1905„"*Remove this unnecessary cast to "Patient".(Ìß†İúÿÿÿÿ8°­¸û1
+M
+java:S1905Æ"*Remove this unnecessary cast to "Patient".(Ìß†İúÿÿÿÿ8´­¸û1
+`
+java:S1128">Remove this unused import 'javafx.collections.ObservableList'.(ÄÜ€éüÿÿÿÿ8şï¦¿û1
+N
+java:S1128
+"1Remove this unused import 'org.w3c.dom.Document'.(Á§²“8şï¦¿û1
+Q
+java:S1128"5Remove this unused import 'java.io.FileOutputStream'.(˜«ªg8şï¦¿û1
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8şï¦¿û1

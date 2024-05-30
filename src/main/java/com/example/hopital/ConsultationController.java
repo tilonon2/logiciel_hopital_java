@@ -135,6 +135,7 @@ public class ConsultationController implements Initializable {
             String observationText = observation.getText();
             String antText = ant.getText();
             java.sql.Date rdvDate = java.sql.Date.valueOf(rdv.getValue());
+            java.sql.Date rdvDate_2 = java.sql.Date.valueOf(rdv.getValue());
 
             // Définir les valeurs pour la requête d'insertion de consultation
             pstInsertConsultation.setInt(1, selectedPatientId);
@@ -163,7 +164,7 @@ public class ConsultationController implements Initializable {
             System.out.println("Statut du siège mis à jour avec succès.");
 
             // Préparer les valeurs pour la requête d'insertion de rendez-vous
-            String timeString = "08:00:00";
+            String timeString = "16:00:00";
             Time time = Time.valueOf(timeString);
             String titreRdv = acteMedicaleText + " - " + selectedPatientName;
 
@@ -181,7 +182,7 @@ public class ConsultationController implements Initializable {
             pstInsertExamenSup.setString(4, "Résultat par défaut");  // Remplacez par une valeur réelle si disponible
             pstInsertExamenSup.setString(5, "diagnostic par défaut");         // Vous pouvez utiliser une autre valeur si nécessaire
             pstInsertExamenSup.setDate(6, rdvDate);                  // Utiliser la date de rendez-vous pour la date de l'examen
-            pstInsertExamenSup.setTime(7, time);                     // Utiliser l'heure du rendez-vous pour l'heure de l'examen
+            pstInsertExamenSup.setDate(7, rdvDate_2);                     // Utiliser l'heure du rendez-vous pour l'heure de l'examen
 
             pstInsertExamenSup.executeUpdate();
             System.out.println("Examen supplémentaire enregistré avec succès.");
@@ -302,7 +303,7 @@ public class ConsultationController implements Initializable {
             return;
         }
 
-        String query = "SELECT type_examen, objectif, resultat, diagnostic, date_examen, rdv FROM examen_sup WHERE id_consultation = ? AND valider = 0";
+        String query = "SELECT type_examen, objectif, resultat, diagnostic, date_examen, rdv FROM examen_sup WHERE id_consultation = ?";
 
         try (Connection conn = dbManager.getConnection();
              PreparedStatement pst = conn.prepareStatement(query)) {

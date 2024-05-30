@@ -1,0 +1,6 @@
+
+r	java:S116""XRename this field "liste_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·Ï½óþÿÿÿÿ
+B
+java:S1602X",Remove useless curly braces around statement(­î‘÷
+a
+java:S1128	"KRemove this unused import 'javafx.scene.control.cell.PropertyValueFactory'.(àÎ¬õ

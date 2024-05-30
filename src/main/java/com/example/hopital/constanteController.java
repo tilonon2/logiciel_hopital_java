@@ -96,14 +96,14 @@ public class constanteController implements Initializable {
     private ObservableList<String> allPatients = FXCollections.observableArrayList();
 
     void loadFonctionData() {
-        String query = "SELECT id, prenom FROM patient";
+        String query = "SELECT id, nom FROM patient";
         try (Connection conn = dbManager.getConnection();
              PreparedStatement pst = conn.prepareStatement(query);
              ResultSet rs = pst.executeQuery()) {
 
             while (rs.next()) {
                 int id = rs.getInt("id");
-                String prenom = rs.getString("prenom");
+                String prenom = rs.getString("nom");
                 if (!patientMap.containsKey(prenom)) {
                     allPatients.add(prenom);
                     patientMap.put(prenom, id);

@@ -1,3 +1,15 @@
 
-X
-java:S2094"BRemove this empty class, write its code or make it an "interface".(ˆàÊ­
+k
+java:S1192Î"HDefine a constant instead of duplicating this literal "Erreur" 11 times.(ûê‹ýÿÿÿÿ8®ÿÁ¼û1
+n	java:S117Š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“œ‹¸8ÏîÊû1
+t	java:S116"XRename this field "acte_medicale" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’É…Ø8Ä¼ž¼û1
+j
+java:S3252y"HUse static access with "java.sql.Statement" for "RETURN_GENERATED_KEYS".(‚€íÿÿÿÿÿ8Å—½û1
+H	java:S106—"+Replace this use of System.out by a logger.(ð‘»ä8Ê¼ž¼û1
+H	java:S106¤"+Replace this use of System.out by a logger.(Ãù§²8Ê¼ž¼û1
+H	java:S106°"+Replace this use of System.out by a logger.(ò‹ñÆ8Ê¼ž¼û1
+M	java:S106¼"+Replace this use of System.out by a logger.(Î€ŠÚüÿÿÿÿ8•´š½û1
+\
+java:S1117½">Rename "diagnostic" which hides the field declared at line 29.(ó“×ã8…Îÿ¾û1
+Z
+java:S1117¿"7Rename "rdv" which hides the field declared at line 44.(ý§¥ðüÿÿÿÿ8…Îÿ¾û1

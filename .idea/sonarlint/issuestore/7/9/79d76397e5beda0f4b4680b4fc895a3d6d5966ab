@@ -1,0 +1,30 @@
+
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(÷ˆ£ä8Ì™²¹û1
+X	java:S125"<This block of commented-out lines of code should be removed.(ÐÖ¹¬8µ“É»û1
+w	java:S116"VRename this field "img_attente" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Âª½¤üÿÿÿÿ8Þ™²¹û1
+w	java:S116"[Rename this field "img_consultation" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔÞì8Þ™²¹û1
+y	java:S116"XRename this field "img_dashboard" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë ¥†üÿÿÿÿ8Þ™²¹û1
+t	java:S116"YRename this field "img_medicament" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßè›8Þ™²¹û1
+r	java:S116 "VRename this field "img_patient" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôò»®8Þ™²¹û1
+s	java:S116#"RRename this field "img_rdv" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ž‡Ï€ùÿÿÿÿ8Þ™²¹û1
+{	java:S116&"ZRename this field "img_specialiste" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µæù´ûÿÿÿÿ8Þ™²¹û1
+z	java:S116)"YRename this field "img_traitement" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßúÉÚþÿÿÿÿ8Þ™²¹û1
+y	java:S116,"XRename this field "img_type_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€›éþÿÿÿÿ8Þ™²¹û1
+o	java:S116/"SRename this field "img_user" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñøÞ8Þ™²¹û1
+]	java:S1252"<This block of commented-out lines of code should be removed.(“Ä¼–þÿÿÿÿ8à™²¹û1
+]	java:S1258"<This block of commented-out lines of code should be removed.(üÑèƒþÿÿÿÿ8á™²¹û1
+X	java:S125<"<This block of commented-out lines of code should be removed.(ôÜÝù8á™²¹û1
+]	java:S125?"<This block of commented-out lines of code should be removed.(ãª“Ùûÿÿÿÿ8á™²¹û1
+X	java:S125B"<This block of commented-out lines of code should be removed.( ÜÁ8á™²¹û1
+X	java:S125E"<This block of commented-out lines of code should be removed.(²»íê8á™²¹û1
+]	java:S125H"<This block of commented-out lines of code should be removed.(Ô¤íþÿÿÿÿÿ8á™²¹û1
+X	java:S125K"<This block of commented-out lines of code should be removed.(Ð¡Ãñ8á™²¹û1
+X	java:S125N"<This block of commented-out lines of code should be removed.(÷„ø’8á™²¹û1
+X	java:S125Q"<This block of commented-out lines of code should be removed.(Š‘ƒª8á™²¹û1
+]	java:S125T"<This block of commented-out lines of code should be removed.(«Ù’†üÿÿÿÿ8á™²¹û1
+k	java:S100•"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îàŸÂ8ã™²¹û1
+p	java:S100Ÿ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©ëæÆúÿÿÿÿ8ã™²¹û1
+k	java:S100£"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò¢˜ü8ä™²¹û1
+Y	java:S125Ç"<This block of commented-out lines of code should be removed.(¥ƒÙË8ë™²¹û1
+Z
+java:S1128"8Remove this unused import 'javafx.scene.control.Button'.(Ë Í‹øÿÿÿÿ8ëø³Éû1

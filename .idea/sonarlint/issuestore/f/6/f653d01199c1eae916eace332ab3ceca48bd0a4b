@@ -1,5 +1,25 @@
 
+t	java:S116 "XRename this field "acte_medicale" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’É…Ø8³âá¾û1
+R
+java:S1481|"5Remove this unused "acteMedicaleText" local variable.(…÷÷«8¸âá¾û1
+O
+java:S1481‚",Remove this unused "rdvTime" local variable.(îš—Òşÿÿÿÿ8¸âá¾û1
+G	java:S106"+Replace this use of System.out by a logger.(ğë¸
+8¹âá¾û1
+U
+java:S1128"3Remove this unused import 'javafx.geometry.Insets'.(›¨µğûÿÿÿÿ8¯úê¾û1
 h
-java:S1128"KRemove this unused import 'javafx.scene.control.cell.PropertyValueFactory'.(àÎ¬õ8Áµç´ò1
+java:S1128"KRemove this unused import 'javafx.scene.control.cell.PropertyValueFactory'.(àÎ¬õ8¯úê¾û1
+[
+java:S1128
+"9Remove this unused import 'javafx.scene.layout.GridPane'.(ÖÀ¹¯ûÿÿÿÿ8¯úê¾û1
+R
+java:S1128"5Remove this unused import 'javafx.scene.layout.HBox'.(äê…8°úê¾û1
+W
+java:S1128"5Remove this unused import 'javafx.scene.layout.VBox'.(íÆáÂùÿÿÿÿ8°úê¾û1
+P
+java:S1128"3Remove this unused import 'javafx.scene.text.Font'.(¾¼¡Ê8°úê¾û1
 Q
-java:S1128"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ8Âµç´ò1
+java:S1128"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ8°úê¾û1
+R
+java:S1128"0Remove this unused import 'java.time.YearMonth'.(€°’Ñùÿÿÿÿ8°úê¾û1

@@ -207,7 +207,7 @@
                            <children>
                               <AnchorPane HBox.hgrow="ALWAYS">
                                  <children>
-                                    <JFXButton fx:id="dashboard11" alignment="BASELINE_LEFT" graphicTextGap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="200.0" ripplerFill="#1a1fa3" styleClass="boutontest3" stylesheets="@styleDash.css" text="Deconnexion" textFill="#8e95a5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <JFXButton fx:id="dashboard11" alignment="BASELINE_LEFT" graphicTextGap="10.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleCloseButtonAction" prefHeight="20.0" prefWidth="200.0" ripplerFill="#1a1fa3" styleClass="boutontest3" stylesheets="@styleDash.css" text="Deconnexion" textFill="#8e95a5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
                                           <Font name="Berlin Sans FB Demi Bold" size="30.0" />
                                        </font>

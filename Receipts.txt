@@ -1,6 +1,6 @@
 -----------------Reception Details----------------
-Motif : Autre examen!
+Motif : Radio
 Date : null
 Nombre de Sièges: 1
-Siège(s) reservé(s): A2
+Siège(s) reservé(s): A1
 -----------------Reception Details----------------

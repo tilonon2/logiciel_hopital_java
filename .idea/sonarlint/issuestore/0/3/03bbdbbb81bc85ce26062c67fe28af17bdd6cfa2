@@ -3,10 +3,6 @@ n	java:S101"MRename this class name to match the regular expression '^[A-Z][a
 ~
 java:S1450"\Remove the "booksVertical" field and declare it as a local variable in the relevant methods.(‡€ßúÿÿÿÿ8«õèÙú1
 y
-java:S1450"\Remove the "recentlyAdded" field and declare it as a local variable in the relevant methods.(§ü«8¬õèÙú1
-U
-java:S1128"3Remove this unused import 'javafx.geometry.Insets'.(›¨µğûÿÿÿÿ8ÉõèÙú1
-[
-java:S1128	"9Remove this unused import 'javafx.scene.layout.GridPane'.(ÖÀ¹¯ûÿÿÿÿ8ËõèÙú1
-K
-java:S1068"/Remove this unused "recommended" private field.(¸ƒªV8ÏõèÙú1
+java:S1450"\Remove the "recentlyAdded" field and declare it as a local variable in the relevant methods.(§ü«8¬õèÙú1
+F
+java:S2115S")Add password protection to this database.(¬˜8ü©’Éû1

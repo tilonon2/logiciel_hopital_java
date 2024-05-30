@@ -2,12 +2,16 @@ package com.example.hopital;
 
 import com.jfoenix.controls.JFXButton;
 //import de.jensd.fx.glyphs.materialicons.MaterialIconView;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -225,6 +229,24 @@ public class dashboardController {
         boolean accessSpecialiste = userType.isAccesSpecialiste();
         dashboard1.setVisible(accessSpecialiste);
         img_specialiste.setVisible(accessSpecialiste);
+    }
+
+    @FXML
+    private void handleCloseButtonAction(ActionEvent event) {
+        // Charger le fichier FXML de la page de connexion
+        try {
+            Parent loginPage = FXMLLoader.load(getClass().getResource("/com/example/hopital/connexion_new.fxml"));
+            Scene loginScene = new Scene(loginPage);
+
+            // Récupérer l'étage (Stage) actuel
+            Stage stage = (Stage) dashboard11.getScene().getWindow();
+
+            // Définir la nouvelle scène sur l'étage
+            stage.setScene(loginScene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
